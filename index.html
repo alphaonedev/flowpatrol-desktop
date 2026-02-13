@@ -158,6 +158,101 @@ footer { text-align: center; color: #484f58; font-size: 10px; padding: 20px; bor
     </table>
 </div>
 
+<!-- TERM STRUCTURE & SKEW -->
+<div class="grid">
+    <div class="card">
+        <h2>📉 TERM STRUCTURE</h2>
+        <div class="metric"><span class="label">SPY</span><span class="value red">backwardation (-0.1) | Front IV: 18.21%</span></div><div class="metric"><span class="label">QQQ</span><span class="value red">backwardation (-1.4) | Front IV: 24.61%</span></div><div class="metric"><span class="label">IWM</span><span class="value red">backwardation (-1.6) | Front IV: 25.38%</span></div>
+    </div>
+    <div class="card">
+        <h2>📐 SKEW TOPOLOGY</h2>
+        <div class="metric"><span class="label">SPY</span><span class="value">4D: RR25=3.1, 5D: RR25=4.0, 6D: RR25=4.59</span></div><div class="metric"><span class="label">QQQ</span><span class="value">4D: RR25=5.04, 5D: RR25=6.85, 6D: RR25=7.52</span></div><div class="metric"><span class="label">IWM</span><span class="value">4D: RR25=3.82, 5D: RR25=4.64, 6D: RR25=4.91</span></div>
+    </div>
+</div>
+
+<!-- GEX LANDSCAPE -->
+<div class="card" style="margin-bottom:16px">
+    <h2>⚡ GEX LANDSCAPE</h2>
+    <div class="grid">
+        <div class="card"><h2>SPY</h2>
+        <div class="metric"><span class="label">Zero Gamma Line</span><span class="value">$680</span></div>
+        <div class="metric"><span class="label">Max Gamma Strike</span><span class="value">$610</span></div>
+        <div class="metric"><span class="label">Total GEX</span><span class="value">0</span></div>
+        <div class="metric"><span class="label">Neg Gamma Pockets</span><span class="value">0</span></div>
+        </div><div class="card"><h2>QQQ</h2>
+        <div class="metric"><span class="label">Zero Gamma Line</span><span class="value">$600</span></div>
+        <div class="metric"><span class="label">Max Gamma Strike</span><span class="value">$540</span></div>
+        <div class="metric"><span class="label">Total GEX</span><span class="value">0</span></div>
+        <div class="metric"><span class="label">Neg Gamma Pockets</span><span class="value">0</span></div>
+        </div><div class="card"><h2>IWM</h2>
+        <div class="metric"><span class="label">Zero Gamma Line</span><span class="value">$260</span></div>
+        <div class="metric"><span class="label">Max Gamma Strike</span><span class="value">$255</span></div>
+        <div class="metric"><span class="label">Total GEX</span><span class="value">0</span></div>
+        <div class="metric"><span class="label">Neg Gamma Pockets</span><span class="value">0</span></div>
+        </div>
+    </div>
+    <div style="color:#8b949e;font-size:11px;margin-top:6px">⚠️ after_hours_limited_oi</div>
+</div>
+
+<!-- RISK COMPOSITE BREAKDOWN -->
+<div class="card" style="margin-bottom:16px">
+    <h2>🎚️ RISK COMPOSITE BREAKDOWN (41/100 — ELEVATED)</h2>
+    <table>
+        <tr><th>Component</th><th>Score</th><th>Weight</th><th>Contribution</th><th>Note</th></tr>
+        <tr><td>gex_regime</td><td>60</td><td>20%</td><td style="color:#58a6ff">12.0</td><td style="color:#8b949e"></td></tr><tr><td>skew_trajectory</td><td>50</td><td>15%</td><td style="color:#58a6ff">7.5</td><td style="color:#8b949e"></td></tr><tr><td>zero_dte_gamma</td><td>20</td><td>15%</td><td style="color:#58a6ff">3.0</td><td style="color:#8b949e">after_hours</td></tr><tr><td>pc_imbalance</td><td>40</td><td>15%</td><td style="color:#58a6ff">6.0</td><td style="color:#8b949e">after_hours</td></tr><tr><td>unusual_breadth</td><td>6</td><td>10%</td><td style="color:#58a6ff">0.6</td><td style="color:#8b949e"></td></tr><tr><td>iv_deformation</td><td>30</td><td>10%</td><td style="color:#58a6ff">3.0</td><td style="color:#8b949e"></td></tr><tr><td>sector_defensiveness</td><td>70</td><td>10%</td><td style="color:#58a6ff">7.0</td><td style="color:#8b949e"></td></tr><tr><td>smart_money</td><td>30</td><td>5%</td><td style="color:#58a6ff">1.5</td><td style="color:#8b949e">baseline_building</td></tr>
+    </table>
+</div>
+
+<!-- HISTORICAL ANALOGS -->
+<div class="card" style="margin-bottom:16px">
+    <h2>🔮 HISTORICAL ANALOGS (SPY -1.5%)</h2>
+    <div class="metric"><span class="label">Analog-Weighted Forward Return</span><span class="value green">+1.92%</span></div>
+    <div class="metric"><span class="label">Direction Consensus</span><span class="value">up</span></div>
+    <div class="metric"><span class="label">Confidence</span><span class="value yellow">LOW</span></div>
+    <table style="margin-top:8px">
+        <tr><th>Date</th><th>Change</th><th>Similarity</th><th>Next Day</th></tr>
+        <tr><td>2026-02-05</td><td>-1.25%</td><td>0.808</td><td style="color:#3fb950">+1.92%</td></tr>
+    </table>
+    <div style="color:#8b949e;font-size:11px;margin-top:6px">30-day lookback only (first run). Full 252-day comparison available after baseline accumulation.</div>
+</div>
+
+<!-- TOP 25 LONG-TERM POSITIONS -->
+<div class="card" style="margin-bottom:16px">
+    <h2>🏛️ TOP LONG-TERM POSITIONS</h2>
+    <table>
+        <tr><th>Symbol</th><th>Spot</th><th>20D Chg</th><th>Thesis</th><th>Structure</th></tr>
+        <tr><td>AMZN</td><td>$198.35</td><td style="color:#f85149">-16.2%</td><td>oversold_accumulation</td><td style="color:#8b949e;font-size:11px">LEAPS call (0.70Δ, 12-18mo) + quarterly put hedge</td></tr><tr><td>MSFT</td><td>$401.97</td><td style="color:#f85149">-12.0%</td><td>oversold_accumulation</td><td style="color:#8b949e;font-size:11px">LEAPS call (0.70Δ, 12-18mo) + quarterly put hedge</td></tr><tr><td>AMD</td><td>$207.99</td><td style="color:#f85149">-9.6%</td><td>neutral</td><td style="color:#8b949e;font-size:11px">monitor</td></tr><tr><td>GOOG</td><td>$307.40</td><td style="color:#f85149">-7.1%</td><td>neutral</td><td style="color:#8b949e;font-size:11px">monitor</td></tr><tr><td>TSLA</td><td>$414.19</td><td style="color:#f85149">-4.9%</td><td>neutral</td><td style="color:#8b949e;font-size:11px">monitor</td></tr><tr><td>AVGO</td><td>$329.20</td><td style="color:#f85149">-3.5%</td><td>neutral</td><td style="color:#8b949e;font-size:11px">monitor</td></tr><tr><td>NVDA</td><td>$186.74</td><td style="color:#f85149">-0.1%</td><td>neutral</td><td style="color:#8b949e;font-size:11px">monitor</td></tr><tr><td>AAPL</td><td>$261.08</td><td style="color:#3fb950">+1.4%</td><td>neutral</td><td style="color:#8b949e;font-size:11px">monitor</td></tr><tr><td>META</td><td>$646.40</td><td style="color:#3fb950">+4.7%</td><td>neutral</td><td style="color:#8b949e;font-size:11px">monitor</td></tr>
+    </table>
+</div>
+
+<!-- GREEKS & AI DISCOVERY STATUS -->
+<div class="grid">
+    <div class="card">
+        <h2>🇬🇷 GREEKS ENGINE</h2>
+        <div class="metric"><span class="label">Status</span><span class="value yellow">after_hours_limited</span></div>
+        <div class="metric"><span class="label">Aggregate GEX</span><span class="value">0.0</span></div>
+        <div class="metric"><span class="label">Vanna Regime</span><span class="value">unavailable_after_hours</span></div>
+        <div class="metric"><span class="label">Greek Risk Score</span><span class="value">0</span></div>
+    </div>
+    <div class="card">
+        <h2>🤖 AI DISCOVERY ENGINE</h2>
+        <div class="metric"><span class="label">Sync Campaigns</span><span class="value">baseline_building</span></div>
+        <div class="metric"><span class="label">Anomaly Feed</span><span class="value">baseline_building</span></div>
+        <div class="metric"><span class="label">Precursor Alerts</span><span class="value">baseline_building</span></div>
+        <div class="metric"><span class="label">Causal Network</span><span class="value">baseline_building</span></div>
+    </div>
+</div>
+
+<!-- PORTFOLIO INTEGRATION -->
+<div class="card" style="margin-bottom:16px">
+    <h2>💼 PORTFOLIO INTEGRATION</h2>
+    <div class="metric"><span class="label">Portfolio Value</span><span class="value">$298,470.57</span></div>
+    <div class="metric"><span class="label">Active Positions</span><span class="value">0</span></div>
+    <div class="metric"><span class="label">Sector Exposure</span><span class="value">zero</span></div>
+    <div class="metric"><span class="label">Tail Risk (SPY -5%)</span><span class="value">$0 impact</span></div>
+    <div style="color:#8b949e;font-size:11px;margin-top:4px">Paper trading account with zero positions. Integration meaningful when trades are executed.</div>
+</div>
+
 <!-- TOP OPTIONS PLAYS -->
 <div class="card" style="margin-bottom:16px">
     <h2>💰 TOP OPTIONS PLAYS (Edge Score Ranked)</h2>
