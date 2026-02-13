@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Options FlowPatrol — 2026-02-12 19:32 EST</title>
+<title>Options FlowPatrol — 2026-02-12 19:45 EST</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#0a0e14;color:#c5c8c6;font-family:'Courier New',monospace;font-size:13px;line-height:1.5;padding:12px;max-width:960px;margin:0 auto}
@@ -18,13 +18,15 @@ h3{font-size:.95em;color:#bd93f9;margin:12px 0 4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin:8px 0}
 .card{background:#141820;border:1px solid #222;border-radius:4px;padding:10px}
 .card h3{margin:0 0 6px;color:#8be9fd;font-size:.9em}
-table{width:100%;border-collapse:collapse;font-size:.85em}
+table{width:100%%;border-collapse:collapse;font-size:.85em}
 tr{border-bottom:1px solid #1a1e28}
 .risk-bar{height:20px;background:#1a1e28;border-radius:10px;overflow:hidden;margin:6px 0}
-.risk-fill{height:100%;border-radius:10px}
+.risk-fill{height:100%%;border-radius:10px}
 .big-num{font-size:1.8em;font-weight:bold;line-height:1.2}
 .label{font-size:.7em;color:#666;text-transform:uppercase;letter-spacing:1px}
 .regime-tag{display:inline-block;padding:4px 12px;border-radius:3px;font-weight:bold;font-size:.9em;background:#1a1e28;border:1px solid #333}
+.conv-card{background:#141820;border:1px solid #333;border-radius:4px;padding:12px;margin:8px 0}
+.conv-score{font-size:1.4em;font-weight:bold}
 .footer{text-align:center;padding:16px 0;margin-top:24px;border-top:1px solid #222;font-size:.7em;color:#444}
 @media(max-width:600px){body{font-size:12px;padding:8px}.grid{grid-template-columns:1fr}.big-num{font-size:1.4em}}
 </style>
@@ -34,78 +36,117 @@ tr{border-bottom:1px solid #1a1e28}
 <div class="hdr">
 <h1>⚡ OPTIONS FLOWPATROL</h1>
 <div class="sub">AI NON-HUMAN INTELLIGENCE — FULL-SPECTRUM OPTIONS ANALYSIS</div>
-<div class="ts">Generated: 2026-02-12 19:32 EST | Portfolio: $298,470.57</div>
+<div class="ts">Generated: 2026-02-12 19:45 EST | Portfolio: $298,470.57</div>
 </div>
 
+<!-- RISK COMPOSITE -->
 <div class="card" style="border-color:#ffb86c">
 <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
-<div>
-<div class="label">Risk Composite</div>
-<div class="big-num" style="color:#ffb86c">70/100</div>
-<div style="color:#ffb86c;font-weight:bold">HIGH</div>
+<div><div class="label">Risk Composite</div><div class="big-num" style="color:#ffb86c">70/100</div><div style="color:#ffb86c;font-weight:bold">HIGH</div></div>
+<div style="text-align:center"><div class="label">Overnight Regime</div><div class="regime-tag">GAP-AND-FADE</div><div style="font-size:.8em;color:#666;margin-top:4px">Gap: +0.33%% | ATR: 0.34x</div></div>
+<div style="text-align:right"><div class="label">Rotation</div><div class="regime-tag" style="color:#ff5555">DEFENSIVE</div><div style="font-size:.8em;color:#666;margin-top:4px">P/C: 1.00</div></div>
 </div>
-<div style="text-align:center">
-<div class="label">Overnight Regime</div>
-<div class="regime-tag">GAP-AND-FADE</div>
-<div style="font-size:.8em;color:#666;margin-top:4px">Gap: +0.33% | ATR: 0.34x</div>
-</div>
-<div style="text-align:right">
-<div class="label">Rotation Signal</div>
-<div class="regime-tag" style="color:#ff5555">DEFENSIVE</div>
-<div style="font-size:.8em;color:#666;margin-top:4px">P/C Ratio: 1.00</div>
-</div>
-</div>
-<div class="risk-bar"><div class="risk-fill" style="width:70%;background:#ffb86c"></div></div>
+<div class="risk-bar"><div class="risk-fill" style="width:70%%;background:#ffb86c"></div></div>
 </div>
 
+<!-- INDICES -->
 <h2>📊 INDEX DASHBOARD</h2>
 <div class="grid">
-<div class="card">
-<h3>SPY (S&P 500)</h3>
+<div class="card"><h3>SPY (S&P 500)</h3>
 <div class="big-num" style="color:#ff5555">$682.53</div>
-<div style="color:#ff5555">-1.34% | -1.4σ from 20D mean</div>
-<div style="font-size:.8em;color:#666">H: $695.35 L: $682.22 | Vol: 1.2x avg | ATR: $38.45</div>
-</div>
-<div class="card">
-<h3>QQQ (Nasdaq 100)</h3>
+<div style="color:#ff5555">-1.34%% | -1.4σ</div>
+<div style="font-size:.8em;color:#666">H: $695.35 L: $682.22 | Vol: 1.2x | ATR: $38.45</div></div>
+<div class="card"><h3>QQQ (Nasdaq 100)</h3>
 <div class="big-num" style="color:#ff5555">$601.44</div>
-<div style="color:#ff5555">-1.89% | -1.7σ from 20D mean</div>
-<div style="font-size:.8em;color:#666">H: $615.81 L: $601.08 | Vol: 1.2x avg</div>
-</div>
-<div class="card">
-<h3>IWM (Russell 2000)</h3>
+<div style="color:#ff5555">-1.89%% | -1.7σ</div>
+<div style="font-size:.8em;color:#666">H: $615.81 L: $601.08 | Vol: 1.2x | ATR: $9.80</div></div>
+<div class="card"><h3>IWM (Russell 2000)</h3>
 <div class="big-num" style="color:#ff5555">$259.73</div>
-<div style="color:#ff5555">-1.94% | -1.3σ from 20D mean</div>
-<div style="font-size:.8em;color:#666">H: $267.46 L: $258.39 | Vol: 1.0x avg</div>
+<div style="color:#ff5555">-1.94%% | -1.3σ</div>
+<div style="font-size:.8em;color:#666">H: $267.46 L: $258.39 | Vol: 1.0x | ATR: $4.88</div></div>
+</div>
+
+<!-- GEX LANDSCAPE -->
+<h2>🎯 GAMMA EXPOSURE (GEX) LANDSCAPE</h2>
+<div class="card">
+<div style="color:#ffb86c;padding:8px">⚠️ GEX data unavailable — Open Interest not populated after hours. Full GEX landscape computes at market open (09:30 ET) when OI data refreshes from OCC overnight batch. 0 contracts have Greeks but 0 have OI in after-hours snapshot.</div>
+<div style="color:#666;font-size:.85em;padding:4px 8px">GEX = OI × Gamma × 100 × Spot × 0.01 | Calls: +GEX (dealer stabilizing) | Puts: -GEX (dealer destabilizing)</div>
+</div>
+
+<!-- SKEW TOPOLOGY -->
+<h2>📐 SKEW TOPOLOGY MAP</h2>
+<div class="card">
+<table>
+<tr style="color:#8be9fd;border-bottom:1px solid #333"><th style="text-align:left;padding:3px 8px">Expiry</th><th style="text-align:left;padding:3px 8px">ATM IV</th><th style="text-align:left;padding:3px 8px">25Δ Put</th><th style="text-align:left;padding:3px 8px">25Δ Call</th><th style="text-align:left;padding:3px 8px">RR (25Δ)</th><th style="text-align:left;padding:3px 8px">Steepness</th></tr>
+<tr><td style="padding:3px 8px">2026-02-13</td><td style="padding:3px 8px">24.4%</td><td style="padding:3px 8px">24.6%</td><td style="padding:3px 8px">21.7%</td><td style="padding:3px 8px">2.9</td><td style="padding:3px 8px">0.10</td></tr>
+<tr><td style="padding:3px 8px">2026-02-17</td><td style="padding:3px 8px">15.4%</td><td style="padding:3px 8px">17.7%</td><td style="padding:3px 8px">12.9%</td><td style="padding:3px 8px">4.9</td><td style="padding:3px 8px">0.93</td></tr>
+<tr><td style="padding:3px 8px">2026-02-18</td><td style="padding:3px 8px">16.3%</td><td style="padding:3px 8px">19.1%</td><td style="padding:3px 8px">13.4%</td><td style="padding:3px 8px">5.7</td><td style="padding:3px 8px">0.98</td></tr>
+<tr><td style="padding:3px 8px">2026-02-19</td><td style="padding:3px 8px">17.1%</td><td style="padding:3px 8px">20.1%</td><td style="padding:3px 8px">14.0%</td><td style="padding:3px 8px">6.1</td><td style="padding:3px 8px">0.99</td></tr>
+<tr><td style="padding:3px 8px">2026-02-20</td><td style="padding:3px 8px">18.0%</td><td style="padding:3px 8px">21.0%</td><td style="padding:3px 8px">14.6%</td><td style="padding:3px 8px">6.4</td><td style="padding:3px 8px">0.88</td></tr>
+
+</table>
+<div style="font-size:.85em;color:#666;margin-top:8px">
+<strong>Reading:</strong> Risk Reversal (RR) = Put IV - Call IV. Positive = put skew dominates (hedging demand). Steepness > 1.0 = steep skew (fear premium).<br>
+⚠️ <strong>Steep put skew detected</strong> across multiple expirations — elevated hedging demand. Put protection is expensive relative to calls.
 </div>
 </div>
 
+<!-- IV TERM STRUCTURE -->
+<h2>📈 IV TERM STRUCTURE <span class="badge" style="background:#ff5555;color:#000">INVERTED</span></h2>
+<div class="card">
+<table>
+<tr style="color:#8be9fd;border-bottom:1px solid #333"><th style="text-align:left;padding:3px 8px">Expiration</th><th style="text-align:left;padding:3px 8px">ATM IV</th></tr>
+<tr><td style="padding:3px 8px">2026-02-13</td><td style="padding:3px 8px">23.3%</td></tr>
+<tr><td style="padding:3px 8px">2026-02-17</td><td style="padding:3px 8px">15.3%</td></tr>
+<tr><td style="padding:3px 8px">2026-02-18</td><td style="padding:3px 8px">16.4%</td></tr>
+<tr><td style="padding:3px 8px">2026-02-19</td><td style="padding:3px 8px">17.1%</td></tr>
+<tr><td style="padding:3px 8px">2026-02-20</td><td style="padding:3px 8px">17.8%</td></tr>
+<tr><td style="padding:3px 8px">2026-02-23</td><td style="padding:3px 8px">16.4%</td></tr>
+<tr><td style="padding:3px 8px">2026-02-24</td><td style="padding:3px 8px">16.6%</td></tr>
+<tr><td style="padding:3px 8px">2026-02-25</td><td style="padding:3px 8px">17.0%</td></tr>
+<tr><td style="padding:3px 8px">2026-02-26</td><td style="padding:3px 8px">17.4%</td></tr>
+
+</table>
+<div style="font-size:.85em;color:#666;margin-top:6px">Front: 23.3%% | Back: 17.4%% — INVERTED<br>
+⚠️ <strong>Term structure INVERTED</strong> — front-month IV exceeds back-month. Indicates near-term event premium or acute hedging demand. Expect elevated intraday volatility.
+</div>
+</div>
+
+<!-- AGGREGATE GREEKS -->
+<h2>🔬 AGGREGATE GREEKS — SPY OPEN INTEREST</h2>
+<div class="card">
+<div style="color:#ffb86c;padding:8px">⚠️ Aggregate Greeks require OI data — unavailable after hours. Full Greek surface (Δ, Γ, Θ, ν, Vanna, Charm, Volga) computes at market open.</div>
+<div style="font-size:.85em;color:#666;padding:4px 8px">Protocol computes 18 Greeks across all strikes/expirations: First-order (Δ,Γ,Θ,ν,ρ) + Second-order (Vanna,Charm,Volga,Veta,Vera) + Third-order (Speed,Color,Zomma,Ultima)</div>
+</div>
+
+<!-- MEGA-CAPS -->
 <h2>🏢 MEGA-CAP STATUS</h2>
 <div class="card">
 <table>
 <tr style="color:#8be9fd;border-bottom:1px solid #333"><th style="text-align:left;padding:3px 8px">Symbol</th><th style="text-align:left;padding:3px 8px">Price</th><th style="text-align:left;padding:3px 8px">Change</th><th style="text-align:left;padding:3px 8px">σ-Move</th></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">AAPL</td><td style="padding:3px 8px">$260.81</td><td style="padding:3px 8px;color:#ff5555">-5.35%</td><td style="padding:3px 8px">-0.1σ</td></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">MSFT</td><td style="padding:3px 8px">$402.86</td><td style="padding:3px 8px;color:#ff5555">-0.36%</td><td style="padding:3px 8px">-1.2σ</td></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">NVDA</td><td style="padding:3px 8px">$187.11</td><td style="padding:3px 8px;color:#ff5555">-1.52%</td><td style="padding:3px 8px">0.3σ</td></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">TSLA</td><td style="padding:3px 8px">$416.63</td><td style="padding:3px 8px;color:#ff5555">-2.68%</td><td style="padding:3px 8px">-0.7σ</td></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">AMZN</td><td style="padding:3px 8px">$198.85</td><td style="padding:3px 8px;color:#ff5555">-2.55%</td><td style="padding:3px 8px">-2.1σ</td></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">META</td><td style="padding:3px 8px">$651.21</td><td style="padding:3px 8px;color:#ff5555">-2.58%</td><td style="padding:3px 8px">-0.4σ</td></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">GOOG</td><td style="padding:3px 8px">$308.70</td><td style="padding:3px 8px;color:#ff5555">-0.81%</td><td style="padding:3px 8px">-2.3σ</td></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">AMD</td><td style="padding:3px 8px">$206.60</td><td style="padding:3px 8px;color:#ff5555">-3.24%</td><td style="padding:3px 8px">-1.2σ</td></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">AVGO</td><td style="padding:3px 8px">$331.01</td><td style="padding:3px 8px;color:#ff5555">-3.41%</td><td style="padding:3px 8px">0.0σ</td></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">ARM</td><td style="padding:3px 8px">$121.90</td><td style="padding:3px 8px;color:#ff5555">-2.70%</td><td style="padding:3px 8px">0.0σ</td></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">SMCI</td><td style="padding:3px 8px">$30.75</td><td style="padding:3px 8px;color:#ff5555">-3.97%</td><td style="padding:3px 8px">0.0σ</td></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">CRM</td><td style="padding:3px 8px">$184.71</td><td style="padding:3px 8px;color:#ff5555">-0.14%</td><td style="padding:3px 8px">0.0σ</td></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">NFLX</td><td style="padding:3px 8px">$76.16</td><td style="padding:3px 8px;color:#ff5555">-4.34%</td><td style="padding:3px 8px">0.0σ</td></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">COIN</td><td style="padding:3px 8px">$142.69</td><td style="padding:3px 8px;color:#ff5555">-6.85%</td><td style="padding:3px 8px">0.0σ</td></tr>
+<tr><td style="padding:3px 8px;color:#bd93f9">AAPL</td><td style="padding:3px 8px">$260.81</td><td style="padding:3px 8px;color:#ff5555">-5.35%</td><td style="padding:3px 8px;color:#c5c8c6">-0.1σ</td></tr>
+<tr><td style="padding:3px 8px;color:#bd93f9">MSFT</td><td style="padding:3px 8px">$402.86</td><td style="padding:3px 8px;color:#ff5555">-0.36%</td><td style="padding:3px 8px;color:#c5c8c6">-1.2σ</td></tr>
+<tr><td style="padding:3px 8px;color:#bd93f9">NVDA</td><td style="padding:3px 8px">$187.11</td><td style="padding:3px 8px;color:#ff5555">-1.52%</td><td style="padding:3px 8px;color:#c5c8c6">0.3σ</td></tr>
+<tr><td style="padding:3px 8px;color:#bd93f9">TSLA</td><td style="padding:3px 8px">$416.63</td><td style="padding:3px 8px;color:#ff5555">-2.68%</td><td style="padding:3px 8px;color:#c5c8c6">-0.7σ</td></tr>
+<tr><td style="padding:3px 8px;color:#bd93f9">AMZN</td><td style="padding:3px 8px">$198.85</td><td style="padding:3px 8px;color:#ff5555">-2.55%</td><td style="padding:3px 8px;color:#ff5555">-2.1σ</td></tr>
+<tr><td style="padding:3px 8px;color:#bd93f9">META</td><td style="padding:3px 8px">$651.21</td><td style="padding:3px 8px;color:#ff5555">-2.58%</td><td style="padding:3px 8px;color:#c5c8c6">-0.4σ</td></tr>
+<tr><td style="padding:3px 8px;color:#bd93f9">GOOG</td><td style="padding:3px 8px">$308.70</td><td style="padding:3px 8px;color:#ff5555">-0.81%</td><td style="padding:3px 8px;color:#ff5555">-2.3σ</td></tr>
+<tr><td style="padding:3px 8px;color:#bd93f9">AMD</td><td style="padding:3px 8px">$206.60</td><td style="padding:3px 8px;color:#ff5555">-3.24%</td><td style="padding:3px 8px;color:#c5c8c6">-1.2σ</td></tr>
+<tr><td style="padding:3px 8px;color:#bd93f9">AVGO</td><td style="padding:3px 8px">$331.01</td><td style="padding:3px 8px;color:#ff5555">-3.41%</td><td style="padding:3px 8px;color:#c5c8c6">0.0σ</td></tr>
+<tr><td style="padding:3px 8px;color:#bd93f9">ARM</td><td style="padding:3px 8px">$121.90</td><td style="padding:3px 8px;color:#ff5555">-2.70%</td><td style="padding:3px 8px;color:#c5c8c6">0.0σ</td></tr>
+<tr><td style="padding:3px 8px;color:#bd93f9">SMCI</td><td style="padding:3px 8px">$30.75</td><td style="padding:3px 8px;color:#ff5555">-3.97%</td><td style="padding:3px 8px;color:#c5c8c6">0.0σ</td></tr>
+<tr><td style="padding:3px 8px;color:#bd93f9">CRM</td><td style="padding:3px 8px">$184.71</td><td style="padding:3px 8px;color:#ff5555">-0.14%</td><td style="padding:3px 8px;color:#c5c8c6">0.0σ</td></tr>
+<tr><td style="padding:3px 8px;color:#bd93f9">NFLX</td><td style="padding:3px 8px">$76.16</td><td style="padding:3px 8px;color:#ff5555">-4.34%</td><td style="padding:3px 8px;color:#c5c8c6">0.0σ</td></tr>
+<tr><td style="padding:3px 8px;color:#bd93f9">COIN</td><td style="padding:3px 8px">$142.69</td><td style="padding:3px 8px;color:#ff5555">-6.85%</td><td style="padding:3px 8px;color:#c5c8c6">0.0σ</td></tr>
 
 </table>
 </div>
 
+<!-- SECTOR ROTATION -->
 <h2>🔄 SECTOR ROTATION <span class="badge" style="background:#ff5555;color:#000">DEFENSIVE</span></h2>
 <div class="card">
 <table>
-<tr style="color:#8be9fd;border-bottom:1px solid #333"><th style="text-align:left;padding:3px 8px">Sector</th><th style="text-align:left;padding:3px 8px">Price</th><th style="text-align:left;padding:3px 8px">5D Ret</th><th style="text-align:left;padding:3px 8px">10D Ret</th></tr>
+<tr style="color:#8be9fd;border-bottom:1px solid #333"><th style="text-align:left;padding:3px 8px">Sector</th><th style="text-align:left;padding:3px 8px">Price</th><th style="text-align:left;padding:3px 8px">5D</th><th style="text-align:left;padding:3px 8px">10D</th></tr>
 <tr><td style="padding:3px 8px;color:#bd93f9">XLU</td><td style="padding:3px 8px">$45.45</td><td style="padding:3px 8px;color:#50fa7b">+5.45%</td><td style="padding:3px 8px;color:#50fa7b">+4.89%</td></tr>
 <tr><td style="padding:3px 8px;color:#bd93f9">XLB</td><td style="padding:3px 8px">$53.02</td><td style="padding:3px 8px;color:#50fa7b">+4.98%</td><td style="padding:3px 8px;color:#50fa7b">+6.03%</td></tr>
 <tr><td style="padding:3px 8px;color:#bd93f9">XLRE</td><td style="padding:3px 8px">$43.13</td><td style="padding:3px 8px;color:#50fa7b">+4.61%</td><td style="padding:3px 8px;color:#50fa7b">+4.25%</td></tr>
@@ -121,28 +162,11 @@ tr{border-bottom:1px solid #1a1e28}
 </table>
 </div>
 
-<h2>📈 SPY IV TERM STRUCTURE <span class="badge" style="background:#ffb86c;color:#000">INVERTED (event premium)</span></h2>
-<div class="card">
-<table>
-<tr style="color:#8be9fd;border-bottom:1px solid #333"><th style="text-align:left;padding:3px 8px">Expiration</th><th style="text-align:left;padding:3px 8px">ATM IV</th></tr>
-<tr><td style="padding:3px 8px">2026-02-13</td><td style="padding:3px 8px">23.3%</td></tr>
-<tr><td style="padding:3px 8px">2026-02-17</td><td style="padding:3px 8px">15.3%</td></tr>
-<tr><td style="padding:3px 8px">2026-02-18</td><td style="padding:3px 8px">16.4%</td></tr>
-<tr><td style="padding:3px 8px">2026-02-19</td><td style="padding:3px 8px">17.1%</td></tr>
-<tr><td style="padding:3px 8px">2026-02-20</td><td style="padding:3px 8px">17.8%</td></tr>
-<tr><td style="padding:3px 8px">2026-02-23</td><td style="padding:3px 8px">16.4%</td></tr>
-<tr><td style="padding:3px 8px">2026-02-24</td><td style="padding:3px 8px">16.6%</td></tr>
-<tr><td style="padding:3px 8px">2026-02-25</td><td style="padding:3px 8px">17.0%</td></tr>
-<tr><td style="padding:3px 8px">2026-02-26</td><td style="padding:3px 8px">17.4%</td></tr>
-
-</table>
-<div style="font-size:.8em;color:#666;margin-top:6px">Front: 23.3% | Back: 17.4% — INVERTED (event premium)</div>
-</div>
-
+<!-- MACRO -->
 <h2>🌐 MACRO DASHBOARD</h2>
 <div class="card">
 <table>
-<tr style="color:#8be9fd;border-bottom:1px solid #333"><th style="text-align:left;padding:3px 8px">Asset</th><th style="text-align:left;padding:3px 8px">Price</th><th style="text-align:left;padding:3px 8px">1D Chg</th></tr>
+<tr style="color:#8be9fd;border-bottom:1px solid #333"><th style="text-align:left;padding:3px 8px">Asset</th><th style="text-align:left;padding:3px 8px">Price</th><th style="text-align:left;padding:3px 8px">1D</th></tr>
 <tr><td style="padding:3px 8px;color:#bd93f9">TLT</td><td style="padding:3px 8px">$89.25</td><td style="padding:3px 8px;color:#50fa7b">+1.36%</td></tr>
 <tr><td style="padding:3px 8px;color:#bd93f9">HYG</td><td style="padding:3px 8px">$80.78</td><td style="padding:3px 8px;color:#ff5555">-0.06%</td></tr>
 <tr><td style="padding:3px 8px;color:#bd93f9">GLD</td><td style="padding:3px 8px">$451.99</td><td style="padding:3px 8px;color:#ff5555">-3.34%</td></tr>
@@ -153,22 +177,73 @@ tr{border-bottom:1px solid #1a1e28}
 </table>
 </div>
 
-<h2>⚠️ ANALYSIS NOTES</h2>
+<!-- CONVICTION PLAYBOOK -->
+<h2>🎯 CONVICTION PLAYBOOK</h2>
+
+<div class="conv-card">
+<h3 style="color:#e6db74">PLAY #1: DAY TRADE</h3>
+<div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px">
+<div><div class="label">Direction</div><div class="conv-score" style="color:#666">NEUTRAL</div></div>
+<div><div class="label">Conviction</div><div class="conv-score" style="color:#666">40/100</div></div>
+<div><div class="label">Min Threshold</div><div style="color:#666">65/100</div></div>
+</div>
+<div style="font-size:.85em;color:#888;margin-top:6px">
+⚠️ Conviction below 65 threshold — no high-conviction day trade. 
+Factors: σ-move (-1.4), regime (GAP-AND-FADE), term structure (INVERTED), risk (70/100).<br>
+<strong>Edge requires:</strong> GEX mechanical edge + opening flow confirmation + microstructure precursor (available at market open).
+</div>
+</div>
+
+<div class="conv-card">
+<h3 style="color:#e6db74">PLAY #2: SWING TRADE (2-15D)</h3>
+<div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px">
+<div><div class="label">Direction</div><div class="conv-score" style="color:#f1fa8c">SHORT</div></div>
+<div><div class="label">Conviction</div><div class="conv-score" style="color:#f1fa8c">50/100</div></div>
+<div><div class="label">Min Threshold</div><div style="color:#666">70/100</div></div>
+</div>
+<div style="font-size:.85em;color:#888;margin-top:6px">
+⚠️ Below 70 threshold — monitoring. 
+Factors: rotation (DEFENSIVE), σ-move, term structure inversion. Full swing conviction requires institutional flow accumulation data (Section 11.4) + sector momentum + dark pool confirmation.
+</div>
+</div>
+
+<!-- SIGMA OPPORTUNITIES -->
+<h2>⚡ σ-MOVE OPPORTUNITIES</h2>
 <div class="card">
-<ul style="padding-left:16px;font-size:.85em">
-<li><strong>Market Status:</strong> CLOSED — After-hours snapshot. Full GEX/Greeks/Flow analysis at 08:00 ET.</li>
-<li><strong>Regime:</strong> GAP-AND-FADE — SPY gapped +0.33% then faded. Range 0.3x of 20D ATR.</li>
-<li><strong>Sigma:</strong> SPY at -1.4σ. Within normal range</li>
-<li><strong>Rotation:</strong> DEFENSIVE — Defensive sectors outperforming cyclicals. Late-cycle positioning.</li>
-<li><strong>Term Structure:</strong> INVERTED (event premium) — front IV at 23.3% vs back 17.4%.</li>
-<li><strong>Next:</strong> Full FlowPatrol with GEX landscape, skew topology, conviction playbook at 08:00 ET.</li>
-</ul>
+<div style="font-size:.85em;color:#666;margin-bottom:6px">Names trading >1.5σ from 20-day mean — potential mean-reversion or breakdown candidates</div>
+<table>
+<tr style="color:#8be9fd;border-bottom:1px solid #333"><th style="text-align:left;padding:3px 8px">Symbol</th><th style="text-align:left;padding:3px 8px">Price</th><th style="text-align:left;padding:3px 8px">σ-Move</th><th style="text-align:left;padding:3px 8px">Day Chg</th><th style="text-align:left;padding:3px 8px">Signal</th></tr>
+<tr><td style="padding:3px 8px;color:#bd93f9">GOOG</td><td style="padding:3px 8px">$308.70</td><td style="padding:3px 8px;color:#ff5555">-2.3σ</td><td style="padding:3px 8px">-0.8%</td><td style="padding:3px 8px">LONG (mean-revert)</td></tr>
+<tr><td style="padding:3px 8px;color:#bd93f9">AMZN</td><td style="padding:3px 8px">$198.85</td><td style="padding:3px 8px;color:#ff5555">-2.1σ</td><td style="padding:3px 8px">-2.5%</td><td style="padding:3px 8px">LONG (mean-revert)</td></tr>
+</table>
+</div>
+
+<!-- PROTOCOL STATUS -->
+<h2>📋 PROTOCOL STATUS — v3.2.0</h2>
+<div class="card">
+<table style="font-size:.85em">
+<tr style="color:#8be9fd;border-bottom:1px solid #333"><th style="text-align:left;padding:3px 8px">Section</th><th style="text-align:left;padding:3px 8px">Status</th><th style="text-align:left;padding:3px 8px">Notes</th></tr>
+<tr><td style="padding:3px 8px">§1.1 Overnight Regime</td><td style="padding:3px 8px;color:#50fa7b">✅ ACTIVE</td><td style="padding:3px 8px;color:#666">GAP-AND-FADE</td></tr>
+<tr><td style="padding:3px 8px">§1.2 Term Structure</td><td style="padding:3px 8px;color:#50fa7b">✅ ACTIVE</td><td style="padding:3px 8px;color:#666">INVERTED — 9 expirations mapped</td></tr>
+<tr><td style="padding:3px 8px">§1.3 Skew Topology</td><td style="padding:3px 8px;color:#50fa7b">✅ ACTIVE</td><td style="padding:3px 8px;color:#666">5 expirations, ATM/25Δ/10Δ mapped</td></tr>
+<tr><td style="padding:3px 8px">§1.4 GEX Landscape</td><td style="padding:3px 8px;color:#ffb86c">⏳ PENDING</td><td style="padding:3px 8px;color:#666">OI unavailable after hours — activates 09:30 ET</td></tr>
+<tr><td style="padding:3px 8px">§2 Opening Flow</td><td style="padding:3px 8px;color:#666">⬜ MARKET HOURS</td><td style="padding:3px 8px;color:#666">Requires live trade tape (OPRA)</td></tr>
+<tr><td style="padding:3px 8px">§3 Intraday Analysis</td><td style="padding:3px 8px;color:#666">⬜ MARKET HOURS</td><td style="padding:3px 8px;color:#666">Unusual activity, sector rotation, IV surface</td></tr>
+<tr><td style="padding:3px 8px">§4 Institutional</td><td style="padding:3px 8px;color:#666">⬜ REQUIRES OPRA</td><td style="padding:3px 8px;color:#666">Fingerprinting needs per-trade data</td></tr>
+<tr><td style="padding:3px 8px">§5 Risk Composite</td><td style="padding:3px 8px;color:#50fa7b">✅ ACTIVE</td><td style="padding:3px 8px;color:#666">HIGH 70/100 (simplified — full requires GEX+flow)</td></tr>
+<tr><td style="padding:3px 8px">§11 AI Discovery</td><td style="padding:3px 8px;color:#666">⬜ REQUIRES OPRA</td><td style="padding:3px 8px;color:#666">Cross-name sync, anomaly detection, analogs</td></tr>
+<tr><td style="padding:3px 8px">§12 Top 25 Options</td><td style="padding:3px 8px;color:#ffb86c">⏳ PARTIAL</td><td style="padding:3px 8px;color:#666">σ-opportunities identified — full requires flow+GEX</td></tr>
+<tr><td style="padding:3px 8px">§13 Top 25 Swing</td><td style="padding:3px 8px;color:#ffb86c">⏳ PARTIAL</td><td style="padding:3px 8px;color:#666">Sector rotation signal active — full requires multi-day flow</td></tr>
+<tr><td style="padding:3px 8px">§14 Top 25 Long-Term</td><td style="padding:3px 8px;color:#666">⬜ WEEKLY</td><td style="padding:3px 8px;color:#666">LEAPS accumulation scan — runs Fridays</td></tr>
+<tr><td style="padding:3px 8px">§16 Greeks Engine</td><td style="padding:3px 8px;color:#ffb86c">⏳ PENDING</td><td style="padding:3px 8px;color:#666">18 Greeks — OI needed. First-order from API, 2nd/3rd computed</td></tr>
+<tr><td style="padding:3px 8px">§17 Conviction Playbook</td><td style="padding:3px 8px;color:#50fa7b">✅ ACTIVE</td><td style="padding:3px 8px;color:#666">Day + Swing signals live — full at market open</td></tr>
+</table>
 </div>
 
 <div class="footer">
-OPTIONS FLOWPATROL &bull; AI NON-HUMAN INTELLIGENCE PRODUCT &bull; NOT FINANCIAL ADVICE<br>
-Generated 2026-02-12 19:32 EST &bull; Data: Alpaca Markets API &bull; Analysis: Claude (Anthropic)<br>
-Options involve risk of total loss. All outputs require human review.<br>
+OPTIONS FLOWPATROL v3.2.0 &bull; AI NON-HUMAN INTELLIGENCE PRODUCT &bull; NOT FINANCIAL ADVICE<br>
+Generated 2026-02-12 19:45 EST &bull; Data: Alpaca Markets API (2,822 SPY + 2,210 QQQ contracts) &bull; Analysis: Claude (Anthropic)<br>
+All trade outputs require human review. Options involve risk of total loss. Past analog performance ≠ future results.<br>
 <br>
 Desktop: <a href="https://alphaonedev.github.io/flowpatrol-desktop/">flowpatrol-desktop</a> |
 Mobile: <a href="https://alphaonedev.github.io/flowpatrol-mobile/">flowpatrol-mobile</a>
