@@ -158,16 +158,46 @@ footer { text-align: center; color: #484f58; font-size: 10px; padding: 20px; bor
     </table>
 </div>
 
-<!-- TERM STRUCTURE & SKEW -->
-<div class="grid">
-    <div class="card">
-        <h2>📉 TERM STRUCTURE</h2>
-        <div class="metric"><span class="label">SPY</span><span class="value red">backwardation (-0.1) | Front IV: 18.21%</span></div><div class="metric"><span class="label">QQQ</span><span class="value red">backwardation (-1.4) | Front IV: 24.61%</span></div><div class="metric"><span class="label">IWM</span><span class="value red">backwardation (-1.6) | Front IV: 25.38%</span></div>
-    </div>
-    <div class="card">
-        <h2>📐 SKEW TOPOLOGY</h2>
-        <div class="metric"><span class="label">SPY</span><span class="value">4D: RR25=3.1, 5D: RR25=4.0, 6D: RR25=4.59</span></div><div class="metric"><span class="label">QQQ</span><span class="value">4D: RR25=5.04, 5D: RR25=6.85, 6D: RR25=7.52</span></div><div class="metric"><span class="label">IWM</span><span class="value">4D: RR25=3.82, 5D: RR25=4.64, 6D: RR25=4.91</span></div>
-    </div>
+<!-- TERM STRUCTURE -->
+<div class="card" style="margin-bottom:16px">
+    <h2>📉 TERM STRUCTURE</h2>
+    <table>
+        <tr><th>Symbol</th><th>Spot</th><th>Shape</th><th>Slope</th><th>Front IV</th><th>Curve</th></tr>
+        <tr><td>SPY</td><td>$680.37</td><td style="color:#f85149">backwardation</td><td>-0.15</td><td>18.21%</td><td style="color:#8b949e;font-size:10px">4D:18.2 → 5D:19.0 → 6D:19.5 → 7D:20.0 → 10D:18.1</td></tr>
+<tr><td>QQQ</td><td>$599.56</td><td style="color:#f85149">backwardation</td><td>-1.37</td><td>24.61%</td><td style="color:#8b949e;font-size:10px">4D:24.6 → 5D:25.9 → 6D:26.8 → 7D:27.6 → 10D:25.1</td></tr>
+<tr><td>IWM</td><td>$259.55</td><td style="color:#f85149">backwardation</td><td>-1.65</td><td>25.38%</td><td style="color:#8b949e;font-size:10px">4D:25.4 → 5D:26.4 → 6D:27.1 → 7D:27.8 → 10D:25.2</td></tr>
+
+    </table>
+</div>
+
+<!-- SKEW TOPOLOGY -->
+<div class="card" style="margin-bottom:16px">
+    <h2>📐 SKEW TOPOLOGY</h2>
+    <table>
+        <tr><th>Symbol</th><th>Expiry</th><th>DTE</th><th>RR25Δ</th><th>RR10Δ</th><th>Put Skew</th></tr>
+        <tr><td>SPY</td><td>20260217</td><td>4D</td><td style="color:#f85149">3.1</td><td style="color:#f85149">8.05</td><td>steep</td></tr>
+<tr><td>SPY</td><td>20260218</td><td>5D</td><td style="color:#f85149">4.0</td><td style="color:#f85149">9.66</td><td>steep</td></tr>
+<tr><td>SPY</td><td>20260219</td><td>6D</td><td style="color:#f85149">4.59</td><td style="color:#f85149">10.39</td><td>steep</td></tr>
+<tr><td>QQQ</td><td>20260217</td><td>4D</td><td style="color:#f85149">5.04</td><td style="color:#f85149">11.68</td><td>steep</td></tr>
+<tr><td>QQQ</td><td>20260218</td><td>5D</td><td style="color:#f85149">6.85</td><td style="color:#f85149">13.7</td><td>steep</td></tr>
+<tr><td>QQQ</td><td>20260219</td><td>6D</td><td style="color:#f85149">7.52</td><td style="color:#f85149">15.99</td><td>steep</td></tr>
+<tr><td>IWM</td><td>20260217</td><td>4D</td><td style="color:#f85149">3.82</td><td style="color:#f85149">7.64</td><td>steep</td></tr>
+<tr><td>IWM</td><td>20260218</td><td>5D</td><td style="color:#f85149">4.64</td><td style="color:#f85149">8.37</td><td>steep</td></tr>
+<tr><td>IWM</td><td>20260219</td><td>6D</td><td style="color:#f85149">4.91</td><td style="color:#f85149">9.44</td><td>steep</td></tr>
+
+    </table>
+</div>
+
+<!-- IV SURFACE TRACKER -->
+<div class="card" style="margin-bottom:16px">
+    <h2>🌊 IV SURFACE TRACKER</h2>
+    <table>
+        <tr><th>Symbol</th><th>Spot</th><th>Surface Points</th><th>ATM IV (Front)</th></tr>
+        <tr><td>SPY</td><td>$680.37</td><td>4,899</td><td>19.09%</td></tr>
+<tr><td>QQQ</td><td>$599.56</td><td>3,532</td><td>25.58%</td></tr>
+
+    </table>
+    <div style="color:#8b949e;font-size:11px;margin-top:6px">Deformation: None | First run — no baseline for comparison. Deformation detection active on subsequent runs.</div>
 </div>
 
 <!-- GEX LANDSCAPE -->
@@ -192,6 +222,70 @@ footer { text-align: center; color: #484f58; font-size: 10px; padding: 20px; bor
         </div>
     </div>
     <div style="color:#8b949e;font-size:11px;margin-top:6px">⚠️ after_hours_limited_oi</div>
+</div>
+
+<!-- FLOW STREAM -->
+<div class="card" style="margin-bottom:16px">
+    <h2>🔥 FLOW STREAM (Top 20 by IV | 495 high-IV contracts total)</h2>
+    <div style="color:#8b949e;font-size:11px;margin-bottom:8px">Real-time flow classification requires intraday data. Using EOD option chain snapshot.</div>
+    <table>
+        <tr><th>Symbol</th><th>Type</th><th>Strike</th><th>Expiry</th><th>IV</th><th>Bid</th><th>Ask</th><th>Flag</th></tr>
+        <tr><td>AAPL</td><td>call</td><td>$215.0</td><td>20260218</td><td style="color:#f0c040">109.1%</td><td>$45.35</td><td>$48.70</td><td style="color:#f0c040">HIGH_IV</td></tr>
+<tr><td>AAPL</td><td>call</td><td>$210.0</td><td>20260220</td><td style="color:#f0c040">107.5%</td><td>$51.50</td><td>$53.15</td><td style="color:#f0c040">HIGH_IV</td></tr>
+<tr><td>AAPL</td><td>call</td><td>$220.0</td><td>20260218</td><td style="color:#f0c040">101.3%</td><td>$40.50</td><td>$43.75</td><td style="color:#f0c040">HIGH_IV</td></tr>
+<tr><td>AAPL</td><td>call</td><td>$190.0</td><td>20260227</td><td style="color:#f0c040">99.7%</td><td>$70.60</td><td>$73.95</td><td style="color:#f0c040">HIGH_IV</td></tr>
+<tr><td>AAPL</td><td>call</td><td>$175.0</td><td>20260306</td><td style="color:#f0c040">97.2%</td><td>$85.55</td><td>$89.05</td><td style="color:#f0c040">HIGH_IV</td></tr>
+<tr><td>AAPL</td><td>call</td><td>$215.0</td><td>20260220</td><td style="color:#f0c040">95.4%</td><td>$45.85</td><td>$48.55</td><td style="color:#f0c040">HIGH_IV</td></tr>
+<tr><td>AAPL</td><td>call</td><td>$180.0</td><td>20260306</td><td style="color:#f0c040">94.7%</td><td>$80.85</td><td>$84.10</td><td style="color:#f0c040">HIGH_IV</td></tr>
+<tr><td>NVDA</td><td>call</td><td>$125.0</td><td>20260306</td><td style="color:#f0c040">93.4%</td><td>$62.40</td><td>$62.65</td><td style="color:#f0c040">HIGH_IV</td></tr>
+<tr><td>NVDA</td><td>call</td><td>$130.0</td><td>20260313</td><td style="color:#f0c040">93.4%</td><td>$57.20</td><td>$59.95</td><td style="color:#f0c040">HIGH_IV</td></tr>
+<tr><td>AAPL</td><td>call</td><td>$195.0</td><td>20260227</td><td style="color:#f0c040">92.8%</td><td>$65.60</td><td>$68.95</td><td style="color:#f0c040">HIGH_IV</td></tr>
+<tr><td>NVDA</td><td>call</td><td>$140.0</td><td>20260223</td><td style="color:#f0c040">92.5%</td><td>$47.10</td><td>$47.30</td><td style="color:#f0c040">HIGH_IV</td></tr>
+<tr><td>NVDA</td><td>call</td><td>$150.0</td><td>20260220</td><td style="color:#f0c040">92.0%</td><td>$37.15</td><td>$37.35</td><td style="color:#f0c040">HIGH_IV</td></tr>
+<tr><td>AAPL</td><td>call</td><td>$225.0</td><td>20260218</td><td style="color:#f0c040">91.9%</td><td>$35.60</td><td>$38.75</td><td style="color:#f0c040">HIGH_IV</td></tr>
+<tr><td>AAPL</td><td>call</td><td>$200.0</td><td>20260227</td><td style="color:#f0c040">90.7%</td><td>$61.10</td><td>$63.95</td><td style="color:#f0c040">HIGH_IV</td></tr>
+<tr><td>AAPL</td><td>call</td><td>$155.0</td><td>20260327</td><td style="color:#f0c040">90.7%</td><td>$106.10</td><td>$109.55</td><td style="color:#f0c040">HIGH_IV</td></tr>
+<tr><td>NVDA</td><td>put</td><td>$300.0</td><td>20260313</td><td style="color:#f0c040">90.7%</td><td>$112.95</td><td>$113.20</td><td style="color:#f0c040">HIGH_IV</td></tr>
+<tr><td>AAPL</td><td>call</td><td>$170.0</td><td>20260313</td><td style="color:#f0c040">89.8%</td><td>$90.55</td><td>$94.30</td><td style="color:#f0c040">HIGH_IV</td></tr>
+<tr><td>AAPL</td><td>call</td><td>$185.0</td><td>20260306</td><td style="color:#f0c040">89.5%</td><td>$75.95</td><td>$79.10</td><td style="color:#f0c040">HIGH_IV</td></tr>
+<tr><td>AAPL</td><td>call</td><td>$220.0</td><td>20260220</td><td style="color:#f0c040">89.4%</td><td>$41.65</td><td>$43.05</td><td style="color:#f0c040">HIGH_IV</td></tr>
+<tr><td>NVDA</td><td>put</td><td>$285.0</td><td>20260306</td><td style="color:#f0c040">89.1%</td><td>$97.95</td><td>$98.20</td><td style="color:#f0c040">HIGH_IV</td></tr>
+
+    </table>
+</div>
+
+<!-- UNUSUAL ACTIVITY DASHBOARD -->
+<div class="card" style="margin-bottom:16px">
+    <h2>🚩 UNUSUAL ACTIVITY (Top 25 of 5,262 flags)</h2>
+    <table>
+        <tr><th>Symbol</th><th>Contract</th><th>Type</th><th>Strike</th><th>Expiry</th><th>IV</th><th>Conv</th><th>Flags</th></tr>
+        <tr><td>AAPL</td><td style="font-size:10px">AAPL260218C00215000</td><td>call</td><td>$215.0</td><td>20260218</td><td>109.1%</td><td style="color:#f0c040">70</td><td style="color:#8b949e;font-size:10px">EXTREME_IV, DEEP_OTM_ACTIVE, TIGHT_SPREAD_HIGH_IV</td></tr>
+<tr><td>AAPL</td><td style="font-size:10px">AAPL260220C00210000</td><td>call</td><td>$210.0</td><td>20260220</td><td>107.5%</td><td style="color:#f0c040">70</td><td style="color:#8b949e;font-size:10px">EXTREME_IV, DEEP_OTM_ACTIVE, TIGHT_SPREAD_HIGH_IV</td></tr>
+<tr><td>AAPL</td><td style="font-size:10px">AAPL260218C00220000</td><td>call</td><td>$220.0</td><td>20260218</td><td>101.3%</td><td style="color:#f0c040">70</td><td style="color:#8b949e;font-size:10px">EXTREME_IV, DEEP_OTM_ACTIVE, TIGHT_SPREAD_HIGH_IV</td></tr>
+<tr><td>TSLA</td><td style="font-size:10px">TSLA260220C00345000</td><td>call</td><td>$345.0</td><td>20260220</td><td>109.0%</td><td style="color:#f0c040">70</td><td style="color:#8b949e;font-size:10px">EXTREME_IV, DEEP_OTM_ACTIVE, TIGHT_SPREAD_HIGH_IV</td></tr>
+<tr><td>TSLA</td><td style="font-size:10px">TSLA260218C00345000</td><td>call</td><td>$345.0</td><td>20260218</td><td>127.3%</td><td style="color:#f0c040">70</td><td style="color:#8b949e;font-size:10px">EXTREME_IV, DEEP_OTM_ACTIVE, TIGHT_SPREAD_HIGH_IV</td></tr>
+<tr><td>TSLA</td><td style="font-size:10px">TSLA260220C00350000</td><td>call</td><td>$350.0</td><td>20260220</td><td>107.5%</td><td style="color:#f0c040">70</td><td style="color:#8b949e;font-size:10px">EXTREME_IV, DEEP_OTM_ACTIVE, TIGHT_SPREAD_HIGH_IV</td></tr>
+<tr><td>TSLA</td><td style="font-size:10px">TSLA260220C00340000</td><td>call</td><td>$340.0</td><td>20260220</td><td>116.7%</td><td style="color:#f0c040">70</td><td style="color:#8b949e;font-size:10px">EXTREME_IV, DEEP_OTM_ACTIVE, TIGHT_SPREAD_HIGH_IV</td></tr>
+<tr><td>TSLA</td><td style="font-size:10px">TSLA260220C00335000</td><td>call</td><td>$335.0</td><td>20260220</td><td>122.2%</td><td style="color:#f0c040">70</td><td style="color:#8b949e;font-size:10px">EXTREME_IV, DEEP_OTM_ACTIVE, TIGHT_SPREAD_HIGH_IV</td></tr>
+<tr><td>TSLA</td><td style="font-size:10px">TSLA260313C00285000</td><td>call</td><td>$285.0</td><td>20260313</td><td>102.7%</td><td style="color:#f0c040">70</td><td style="color:#8b949e;font-size:10px">EXTREME_IV, DEEP_OTM_ACTIVE, TIGHT_SPREAD_HIGH_IV</td></tr>
+<tr><td>TSLA</td><td style="font-size:10px">TSLA260320C00265000</td><td>call</td><td>$265.0</td><td>20260320</td><td>108.8%</td><td style="color:#f0c040">70</td><td style="color:#8b949e;font-size:10px">EXTREME_IV, DEEP_OTM_ACTIVE, TIGHT_SPREAD_HIGH_IV</td></tr>
+<tr><td>TSLA</td><td style="font-size:10px">TSLA260227C00320000</td><td>call</td><td>$320.0</td><td>20260227</td><td>102.6%</td><td style="color:#f0c040">70</td><td style="color:#8b949e;font-size:10px">EXTREME_IV, DEEP_OTM_ACTIVE, TIGHT_SPREAD_HIGH_IV</td></tr>
+<tr><td>TSLA</td><td style="font-size:10px">TSLA260306C00300000</td><td>call</td><td>$300.0</td><td>20260306</td><td>100.5%</td><td style="color:#f0c040">70</td><td style="color:#8b949e;font-size:10px">EXTREME_IV, DEEP_OTM_ACTIVE, TIGHT_SPREAD_HIGH_IV</td></tr>
+<tr><td>TSLA</td><td style="font-size:10px">TSLA260306C00295000</td><td>call</td><td>$295.0</td><td>20260306</td><td>104.3%</td><td style="color:#f0c040">70</td><td style="color:#8b949e;font-size:10px">EXTREME_IV, DEEP_OTM_ACTIVE, TIGHT_SPREAD_HIGH_IV</td></tr>
+<tr><td>TSLA</td><td style="font-size:10px">TSLA260306C00290000</td><td>call</td><td>$290.0</td><td>20260306</td><td>107.9%</td><td style="color:#f0c040">70</td><td style="color:#8b949e;font-size:10px">EXTREME_IV, DEEP_OTM_ACTIVE, TIGHT_SPREAD_HIGH_IV</td></tr>
+<tr><td>TSLA</td><td style="font-size:10px">TSLA260313C00275000</td><td>call</td><td>$275.0</td><td>20260313</td><td>108.7%</td><td style="color:#f0c040">70</td><td style="color:#8b949e;font-size:10px">EXTREME_IV, DEEP_OTM_ACTIVE, TIGHT_SPREAD_HIGH_IV</td></tr>
+<tr><td>TSLA</td><td style="font-size:10px">TSLA260227C00315000</td><td>call</td><td>$315.0</td><td>20260227</td><td>107.3%</td><td style="color:#f0c040">70</td><td style="color:#8b949e;font-size:10px">EXTREME_IV, DEEP_OTM_ACTIVE, TIGHT_SPREAD_HIGH_IV</td></tr>
+<tr><td>TSLA</td><td style="font-size:10px">TSLA260227C00310000</td><td>call</td><td>$310.0</td><td>20260227</td><td>111.1%</td><td style="color:#f0c040">70</td><td style="color:#8b949e;font-size:10px">EXTREME_IV, DEEP_OTM_ACTIVE, TIGHT_SPREAD_HIGH_IV</td></tr>
+<tr><td>TSLA</td><td style="font-size:10px">TSLA260327C00255000</td><td>call</td><td>$255.0</td><td>20260327</td><td>108.2%</td><td style="color:#f0c040">70</td><td style="color:#8b949e;font-size:10px">EXTREME_IV, DEEP_OTM_ACTIVE, TIGHT_SPREAD_HIGH_IV</td></tr>
+<tr><td>AMZN</td><td style="font-size:10px">AMZN260306C00135000</td><td>call</td><td>$135.0</td><td>20260306</td><td>102.6%</td><td style="color:#f0c040">70</td><td style="color:#8b949e;font-size:10px">EXTREME_IV, DEEP_OTM_ACTIVE, TIGHT_SPREAD_HIGH_IV</td></tr>
+<tr><td>AMZN</td><td style="font-size:10px">AMZN260223C00155000</td><td>call</td><td>$155.0</td><td>20260223</td><td>103.6%</td><td style="color:#f0c040">70</td><td style="color:#8b949e;font-size:10px">EXTREME_IV, DEEP_OTM_ACTIVE, TIGHT_SPREAD_HIGH_IV</td></tr>
+<tr><td>AMZN</td><td style="font-size:10px">AMZN260220C00162500</td><td>call</td><td>$162.5</td><td>20260220</td><td>107.0%</td><td style="color:#f0c040">70</td><td style="color:#8b949e;font-size:10px">EXTREME_IV, DEEP_OTM_ACTIVE, TIGHT_SPREAD_HIGH_IV</td></tr>
+<tr><td>AMZN</td><td style="font-size:10px">AMZN260218C00165000</td><td>call</td><td>$165.0</td><td>20260218</td><td>116.3%</td><td style="color:#f0c040">70</td><td style="color:#8b949e;font-size:10px">EXTREME_IV, DEEP_OTM_ACTIVE, TIGHT_SPREAD_HIGH_IV</td></tr>
+<tr><td>AMZN</td><td style="font-size:10px">AMZN260227C00145000</td><td>call</td><td>$145.0</td><td>20260227</td><td>108.5%</td><td style="color:#f0c040">70</td><td style="color:#8b949e;font-size:10px">EXTREME_IV, DEEP_OTM_ACTIVE, TIGHT_SPREAD_HIGH_IV</td></tr>
+<tr><td>AMZN</td><td style="font-size:10px">AMZN260220C00160000</td><td>call</td><td>$160.0</td><td>20260220</td><td>118.5%</td><td style="color:#f0c040">70</td><td style="color:#8b949e;font-size:10px">EXTREME_IV, DEEP_OTM_ACTIVE, TIGHT_SPREAD_HIGH_IV</td></tr>
+<tr><td>META</td><td style="font-size:10px">META260220C00520000</td><td>call</td><td>$520.0</td><td>20260220</td><td>120.1%</td><td style="color:#f0c040">70</td><td style="color:#8b949e;font-size:10px">EXTREME_IV, DEEP_OTM_ACTIVE, TIGHT_SPREAD_HIGH_IV</td></tr>
+
+    </table>
 </div>
 
 <!-- RISK COMPOSITE BREAKDOWN -->
