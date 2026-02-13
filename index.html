@@ -3,250 +3,243 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Options FlowPatrol — 2026-02-12 19:45 EST</title>
+<title>FlowPatrol Dashboard — 2026-02-12</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#0a0e14;color:#c5c8c6;font-family:'Courier New',monospace;font-size:13px;line-height:1.5;padding:12px;max-width:960px;margin:0 auto}
-a{color:#5f9ea0}
-h1{font-size:1.3em;color:#e6db74;border-bottom:2px solid #e6db74;padding-bottom:6px;margin-bottom:4px;letter-spacing:2px;text-align:center}
-h2{font-size:1.05em;color:#8be9fd;margin:20px 0 8px;padding:4px 0;border-bottom:1px solid #333}
-h3{font-size:.95em;color:#bd93f9;margin:12px 0 4px}
-.hdr{text-align:center;padding:12px 0;border-bottom:2px double #444;margin-bottom:16px}
-.hdr .sub{font-size:.7em;color:#666;letter-spacing:3px}
-.hdr .ts{font-size:.7em;color:#555;margin-top:2px}
-.badge{display:inline-block;padding:2px 8px;border-radius:3px;font-size:.8em;font-weight:bold;margin-left:4px;vertical-align:middle}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin:8px 0}
-.card{background:#141820;border:1px solid #222;border-radius:4px;padding:10px}
-.card h3{margin:0 0 6px;color:#8be9fd;font-size:.9em}
-table{width:100%%;border-collapse:collapse;font-size:.85em}
-tr{border-bottom:1px solid #1a1e28}
-.risk-bar{height:20px;background:#1a1e28;border-radius:10px;overflow:hidden;margin:6px 0}
-.risk-fill{height:100%%;border-radius:10px}
-.big-num{font-size:1.8em;font-weight:bold;line-height:1.2}
-.label{font-size:.7em;color:#666;text-transform:uppercase;letter-spacing:1px}
-.regime-tag{display:inline-block;padding:4px 12px;border-radius:3px;font-weight:bold;font-size:.9em;background:#1a1e28;border:1px solid #333}
-.conv-card{background:#141820;border:1px solid #333;border-radius:4px;padding:12px;margin:8px 0}
-.conv-score{font-size:1.4em;font-weight:bold}
-.footer{text-align:center;padding:16px 0;margin-top:24px;border-top:1px solid #222;font-size:.7em;color:#444}
-@media(max-width:600px){body{font-size:12px;padding:8px}.grid{grid-template-columns:1fr}.big-num{font-size:1.4em}}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #0a0a0f; color: #c8c8d0; font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace; font-size: 13px; line-height: 1.5; }
+.container { max-width: 1400px; margin: 0 auto; padding: 12px; }
+header { background: linear-gradient(135deg, #0d1117, #161b22); border: 1px solid #30363d; border-radius: 8px; padding: 16px 20px; margin-bottom: 16px; }
+header h1 { color: #58a6ff; font-size: 18px; letter-spacing: 2px; }
+header .subtitle { color: #8b949e; font-size: 12px; margin-top: 4px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 12px; margin-bottom: 16px; }
+.card { background: #0d1117; border: 1px solid #21262d; border-radius: 6px; padding: 14px; }
+.card h2 { color: #58a6ff; font-size: 14px; margin-bottom: 10px; border-bottom: 1px solid #21262d; padding-bottom: 6px; }
+.metric { display: flex; justify-content: space-between; margin: 4px 0; }
+.metric .label { color: #8b949e; }
+.metric .value { font-weight: bold; }
+.green { color: #3fb950; }
+.red { color: #f85149; }
+.yellow { color: #d29922; }
+.orange { color: #db6d28; }
+table { width: 100%; border-collapse: collapse; font-size: 12px; }
+th { background: #161b22; color: #58a6ff; padding: 6px 8px; text-align: left; border-bottom: 2px solid #30363d; }
+td { padding: 5px 8px; border-bottom: 1px solid #21262d; }
+tr:hover { background: #161b22; }
+.alert-critical { background: rgba(248,81,73,0.1); }
+.alert-urgent { background: rgba(210,153,34,0.1); }
+.alert-info { background: rgba(88,166,255,0.05); }
+.badge { padding: 2px 6px; border-radius: 3px; font-size: 10px; font-weight: bold; }
+.badge-defensive { background: #1a4a2a; color: #3fb950; }
+.badge-selling { background: #4a1a1a; color: #f85149; }
+.badge-risk_on { background: #1a3a4a; color: #58a6ff; }
+.badge-neutral { background: #2a2a2a; color: #8b949e; }
+.risk-gauge { text-align: center; padding: 12px; }
+.risk-score { font-size: 48px; font-weight: bold; }
+.risk-label { font-size: 16px; margin-top: 4px; }
+.play-card { background: #0d1117; border: 1px solid #21262d; border-radius: 6px; padding: 14px; margin-bottom: 10px; }
+.play-card h3 { color: #c9d1d9; font-size: 13px; margin-bottom: 8px; }
+.conviction { float: right; font-size: 14px; }
+.play-detail { color: #58a6ff; font-size: 14px; margin: 4px 0; }
+.play-meta { color: #8b949e; font-size: 12px; }
+.play-risk { color: #d29922; font-size: 11px; margin-top: 4px; }
+.na { color: #484f58; font-style: italic; }
+.narrative { background: #0d1117; border: 1px solid #21262d; border-radius: 6px; padding: 16px; margin-bottom: 16px; white-space: pre-wrap; font-size: 12px; line-height: 1.7; }
+.narrative h2 { color: #58a6ff; font-size: 14px; margin-bottom: 10px; }
+footer { text-align: center; color: #484f58; font-size: 10px; padding: 20px; border-top: 1px solid #21262d; margin-top: 16px; }
+.disclaimer { color: #484f58; font-size: 9px; padding: 8px; border: 1px solid #21262d; border-radius: 4px; margin-top: 12px; }
+@media (max-width: 768px) {
+    .grid { grid-template-columns: 1fr; }
+    .container { padding: 8px; }
+    body { font-size: 12px; }
+    table { font-size: 11px; }
+    th, td { padding: 4px 6px; }
+}
 </style>
 </head>
 <body>
+<div class="container">
 
-<div class="hdr">
-<h1>⚡ OPTIONS FLOWPATROL</h1>
-<div class="sub">AI NON-HUMAN INTELLIGENCE — FULL-SPECTRUM OPTIONS ANALYSIS</div>
-<div class="ts">Generated: 2026-02-12 19:45 EST | Portfolio: $298,470.57</div>
-</div>
+<header>
+    <h1>⚡ FLOWPATROL DAILY CONVICTION PLAYBOOK</h1>
+    <div class="subtitle">2026-02-12 20:58:31.033188-05:00 | Market: CLOSED | Next Open: 2026-02-13 09:30:00-05:00</div>
+</header>
 
-<!-- RISK COMPOSITE -->
-<div class="card" style="border-color:#ffb86c">
-<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
-<div><div class="label">Risk Composite</div><div class="big-num" style="color:#ffb86c">70/100</div><div style="color:#ffb86c;font-weight:bold">HIGH</div></div>
-<div style="text-align:center"><div class="label">Overnight Regime</div><div class="regime-tag">GAP-AND-FADE</div><div style="font-size:.8em;color:#666;margin-top:4px">Gap: +0.33%% | ATR: 0.34x</div></div>
-<div style="text-align:right"><div class="label">Rotation</div><div class="regime-tag" style="color:#ff5555">DEFENSIVE</div><div style="font-size:.8em;color:#666;margin-top:4px">P/C: 1.00</div></div>
-</div>
-<div class="risk-bar"><div class="risk-fill" style="width:70%%;background:#ffb86c"></div></div>
-</div>
-
-<!-- INDICES -->
-<h2>📊 INDEX DASHBOARD</h2>
+<!-- TOP ROW: Regime + Risk + Indices -->
 <div class="grid">
-<div class="card"><h3>SPY (S&P 500)</h3>
-<div class="big-num" style="color:#ff5555">$682.53</div>
-<div style="color:#ff5555">-1.34%% | -1.4σ</div>
-<div style="font-size:.8em;color:#666">H: $695.35 L: $682.22 | Vol: 1.2x | ATR: $38.45</div></div>
-<div class="card"><h3>QQQ (Nasdaq 100)</h3>
-<div class="big-num" style="color:#ff5555">$601.44</div>
-<div style="color:#ff5555">-1.89%% | -1.7σ</div>
-<div style="font-size:.8em;color:#666">H: $615.81 L: $601.08 | Vol: 1.2x | ATR: $9.80</div></div>
-<div class="card"><h3>IWM (Russell 2000)</h3>
-<div class="big-num" style="color:#ff5555">$259.73</div>
-<div style="color:#ff5555">-1.94%% | -1.3σ</div>
-<div style="font-size:.8em;color:#666">H: $267.46 L: $258.39 | Vol: 1.0x | ATR: $4.88</div></div>
+    <div class="card">
+        <h2>📊 MARKET REGIME</h2>
+        <div class="metric"><span class="label">Overnight</span><span class="value red">TREND_DOWN</span></div>
+        <div class="metric"><span class="label">Context</span><span class="value red">RISK_OFF_SELL</span></div>
+        <div class="metric"><span class="label">Term Structure</span><span class="value yellow">backwardation (-6.2)</span></div>
+        <div class="metric"><span class="label">Sector Signal</span><span class="value yellow">DEFENSIVE_PIVOT</span></div>
+        <div class="metric"><span class="label">SPY Range</span><span class="value">15.0 (199% ATR)</span></div>
+    </div>
+    
+    <div class="card">
+        <div class="risk-gauge">
+            <div class="risk-score" style="color:#f0c040">43</div>
+            <div class="risk-label" style="color:#f0c040">ELEVATED</div>
+            <div style="color:#8b949e;font-size:11px;margin-top:4px">RISK COMPOSITE /100</div>
+        </div>
+    </div>
+    
+    <div class="card">
+        <h2>📈 INDICES & CRYPTO</h2>
+        <div class="metric"><span class="label">SPY</span><span class="value red">$681.27 (-1.54%)</span></div>
+        <div class="metric"><span class="label">QQQ</span><span class="value red">$599.91 (-2.03%)</span></div>
+        <div class="metric"><span class="label">IWM</span><span class="value red">$259.54 (-2.04%)</span></div>
+        <div class="metric"><span class="label">BTC</span><span class="value red">$66,308</span></div>
+        <div class="metric"><span class="label">ETH</span><span class="value red">$1,945</span></div>
+        <div class="metric"><span class="label">Account</span><span class="value">$298,470.57</span></div>
+    </div>
 </div>
 
-<!-- GEX LANDSCAPE -->
-<h2>🎯 GAMMA EXPOSURE (GEX) LANDSCAPE</h2>
-<div class="card">
-<div style="color:#ffb86c;padding:8px">⚠️ GEX data unavailable — Open Interest not populated after hours. Full GEX landscape computes at market open (09:30 ET) when OI data refreshes from OCC overnight batch. 0 contracts have Greeks but 0 have OI in after-hours snapshot.</div>
-<div style="color:#666;font-size:.85em;padding:4px 8px">GEX = OI × Gamma × 100 × Spot × 0.01 | Calls: +GEX (dealer stabilizing) | Puts: -GEX (dealer destabilizing)</div>
+<!-- CONVICTION PLAYS -->
+<div class="card" style="margin-bottom:16px">
+    <h2>🎯 CONVICTION PLAYBOOK</h2>
+    <div class="play-card">
+        <h3>#1 DAY TRADE <span class="conviction" style="color:#f0c040">CONV: 65</span></h3>
+        <div class="play-detail"><strong>AAPL</strong> — bearish outright_option</div>
+        <div class="play-meta">Strike: $257.5 | Expiry: 20260227 | Entry: $4.28</div>
+        <div class="play-risk">Stop: 50% of premium ($214.0) | Confidence: MEDIUM — after-hours data, refresh at open</div>
+    </div>
+    <div class="play-card">
+        <h3>#2 SWING TRADE <span class="conviction" style="color:#f0c040">CONV: 72.2</span></h3>
+        <div class="play-detail"><strong>AMD</strong> — long_bounce outright or vertical spread (10-15 DTE)</div>
+        <div class="play-meta">Strike: $? | Expiry: ? | Entry: $Limit at $204.77</div>
+        <div class="play-risk">Stop: $195.51 (-5%) | Confidence: MEDIUM</div>
+    </div>
+    <div class="play-card">
+        <h3>#3 MIDTERM <span class="conviction" style="color:#f0c040">CONV: 70</span></h3>
+        <div class="play-detail"><strong>AMZN</strong> — long LEAPS call (0.70Δ, 12-18mo) + quarterly put hedge</div>
+        <div class="play-meta">Strike: $? | Expiry: ? | Entry: $?</div>
+        <div class="play-risk">Stop: ? | Confidence: MEDIUM — first run, no LEAPS OI baseline</div>
+    </div>
+    <div class="play-card">
+        <h3>#4 LONG-TERM <span class="conviction" style="color:#f0c040">CONV: 72</span></h3>
+        <div class="play-detail"><strong>AMZN</strong> — long 70% equity + 20% LEAPS (18mo, 0.70Δ) + 10% quarterly puts (0.15Δ, 90DTE)</div>
+        <div class="play-meta">Strike: $? | Expiry: ? | Entry: $?</div>
+        <div class="play-risk">Stop: ? | Confidence: MEDIUM — requires multi-quarter 13F and insider data for HIGH</div>
+    </div>
 </div>
 
-<!-- SKEW TOPOLOGY -->
-<h2>📐 SKEW TOPOLOGY MAP</h2>
-<div class="card">
-<table>
-<tr style="color:#8be9fd;border-bottom:1px solid #333"><th style="text-align:left;padding:3px 8px">Expiry</th><th style="text-align:left;padding:3px 8px">ATM IV</th><th style="text-align:left;padding:3px 8px">25Δ Put</th><th style="text-align:left;padding:3px 8px">25Δ Call</th><th style="text-align:left;padding:3px 8px">RR (25Δ)</th><th style="text-align:left;padding:3px 8px">Steepness</th></tr>
-<tr><td style="padding:3px 8px">2026-02-13</td><td style="padding:3px 8px">24.4%</td><td style="padding:3px 8px">24.6%</td><td style="padding:3px 8px">21.7%</td><td style="padding:3px 8px">2.9</td><td style="padding:3px 8px">0.10</td></tr>
-<tr><td style="padding:3px 8px">2026-02-17</td><td style="padding:3px 8px">15.4%</td><td style="padding:3px 8px">17.7%</td><td style="padding:3px 8px">12.9%</td><td style="padding:3px 8px">4.9</td><td style="padding:3px 8px">0.93</td></tr>
-<tr><td style="padding:3px 8px">2026-02-18</td><td style="padding:3px 8px">16.3%</td><td style="padding:3px 8px">19.1%</td><td style="padding:3px 8px">13.4%</td><td style="padding:3px 8px">5.7</td><td style="padding:3px 8px">0.98</td></tr>
-<tr><td style="padding:3px 8px">2026-02-19</td><td style="padding:3px 8px">17.1%</td><td style="padding:3px 8px">20.1%</td><td style="padding:3px 8px">14.0%</td><td style="padding:3px 8px">6.1</td><td style="padding:3px 8px">0.99</td></tr>
-<tr><td style="padding:3px 8px">2026-02-20</td><td style="padding:3px 8px">18.0%</td><td style="padding:3px 8px">21.0%</td><td style="padding:3px 8px">14.6%</td><td style="padding:3px 8px">6.4</td><td style="padding:3px 8px">0.88</td></tr>
+<!-- ALERTS -->
+<div class="card" style="margin-bottom:16px">
+    <h2>🚨 ALERT FEED (T1: 0 | T2: 3 | T3: 4)</h2>
+    <table>
+        <tr><th>Tier</th><th>Type</th><th>Message</th></tr>
+        <tr class="alert-urgent"><td>T2</td><td>TREND_DOWN_REGIME</td><td>Sustained selling — SPY closed near session low</td></tr>
+<tr class="alert-urgent"><td>T2</td><td>DEFENSIVE_ROTATION</td><td>Defensive pivot: leaders ['XLU', 'XLP', 'XLRE']</td></tr>
+<tr class="alert-urgent"><td>T2</td><td>BACKWARDATION</td><td>SPY term structure backwardation (slope=-6.22)</td></tr>
+<tr class="alert-info"><td>T3</td><td>LARGE_MOVE</td><td>AAPL -5.0%</td></tr>
+<tr class="alert-info"><td>T3</td><td>LARGE_MOVE</td><td>SMCI -5.0%</td></tr>
+<tr class="alert-info"><td>T3</td><td>LARGE_MOVE</td><td>NFLX -4.7%</td></tr>
+<tr class="alert-info"><td>T3</td><td>LARGE_MOVE</td><td>COIN -7.9%</td></tr>
 
-</table>
-<div style="font-size:.85em;color:#666;margin-top:8px">
-<strong>Reading:</strong> Risk Reversal (RR) = Put IV - Call IV. Positive = put skew dominates (hedging demand). Steepness > 1.0 = steep skew (fear premium).<br>
-⚠️ <strong>Steep put skew detected</strong> across multiple expirations — elevated hedging demand. Put protection is expensive relative to calls.
-</div>
-</div>
-
-<!-- IV TERM STRUCTURE -->
-<h2>📈 IV TERM STRUCTURE <span class="badge" style="background:#ff5555;color:#000">INVERTED</span></h2>
-<div class="card">
-<table>
-<tr style="color:#8be9fd;border-bottom:1px solid #333"><th style="text-align:left;padding:3px 8px">Expiration</th><th style="text-align:left;padding:3px 8px">ATM IV</th></tr>
-<tr><td style="padding:3px 8px">2026-02-13</td><td style="padding:3px 8px">23.3%</td></tr>
-<tr><td style="padding:3px 8px">2026-02-17</td><td style="padding:3px 8px">15.3%</td></tr>
-<tr><td style="padding:3px 8px">2026-02-18</td><td style="padding:3px 8px">16.4%</td></tr>
-<tr><td style="padding:3px 8px">2026-02-19</td><td style="padding:3px 8px">17.1%</td></tr>
-<tr><td style="padding:3px 8px">2026-02-20</td><td style="padding:3px 8px">17.8%</td></tr>
-<tr><td style="padding:3px 8px">2026-02-23</td><td style="padding:3px 8px">16.4%</td></tr>
-<tr><td style="padding:3px 8px">2026-02-24</td><td style="padding:3px 8px">16.6%</td></tr>
-<tr><td style="padding:3px 8px">2026-02-25</td><td style="padding:3px 8px">17.0%</td></tr>
-<tr><td style="padding:3px 8px">2026-02-26</td><td style="padding:3px 8px">17.4%</td></tr>
-
-</table>
-<div style="font-size:.85em;color:#666;margin-top:6px">Front: 23.3%% | Back: 17.4%% — INVERTED<br>
-⚠️ <strong>Term structure INVERTED</strong> — front-month IV exceeds back-month. Indicates near-term event premium or acute hedging demand. Expect elevated intraday volatility.
-</div>
-</div>
-
-<!-- AGGREGATE GREEKS -->
-<h2>🔬 AGGREGATE GREEKS — SPY OPEN INTEREST</h2>
-<div class="card">
-<div style="color:#ffb86c;padding:8px">⚠️ Aggregate Greeks require OI data — unavailable after hours. Full Greek surface (Δ, Γ, Θ, ν, Vanna, Charm, Volga) computes at market open.</div>
-<div style="font-size:.85em;color:#666;padding:4px 8px">Protocol computes 18 Greeks across all strikes/expirations: First-order (Δ,Γ,Θ,ν,ρ) + Second-order (Vanna,Charm,Volga,Veta,Vera) + Third-order (Speed,Color,Zomma,Ultima)</div>
-</div>
-
-<!-- MEGA-CAPS -->
-<h2>🏢 MEGA-CAP STATUS</h2>
-<div class="card">
-<table>
-<tr style="color:#8be9fd;border-bottom:1px solid #333"><th style="text-align:left;padding:3px 8px">Symbol</th><th style="text-align:left;padding:3px 8px">Price</th><th style="text-align:left;padding:3px 8px">Change</th><th style="text-align:left;padding:3px 8px">σ-Move</th></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">AAPL</td><td style="padding:3px 8px">$260.81</td><td style="padding:3px 8px;color:#ff5555">-5.35%</td><td style="padding:3px 8px;color:#c5c8c6">-0.1σ</td></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">MSFT</td><td style="padding:3px 8px">$402.86</td><td style="padding:3px 8px;color:#ff5555">-0.36%</td><td style="padding:3px 8px;color:#c5c8c6">-1.2σ</td></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">NVDA</td><td style="padding:3px 8px">$187.11</td><td style="padding:3px 8px;color:#ff5555">-1.52%</td><td style="padding:3px 8px;color:#c5c8c6">0.3σ</td></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">TSLA</td><td style="padding:3px 8px">$416.63</td><td style="padding:3px 8px;color:#ff5555">-2.68%</td><td style="padding:3px 8px;color:#c5c8c6">-0.7σ</td></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">AMZN</td><td style="padding:3px 8px">$198.85</td><td style="padding:3px 8px;color:#ff5555">-2.55%</td><td style="padding:3px 8px;color:#ff5555">-2.1σ</td></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">META</td><td style="padding:3px 8px">$651.21</td><td style="padding:3px 8px;color:#ff5555">-2.58%</td><td style="padding:3px 8px;color:#c5c8c6">-0.4σ</td></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">GOOG</td><td style="padding:3px 8px">$308.70</td><td style="padding:3px 8px;color:#ff5555">-0.81%</td><td style="padding:3px 8px;color:#ff5555">-2.3σ</td></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">AMD</td><td style="padding:3px 8px">$206.60</td><td style="padding:3px 8px;color:#ff5555">-3.24%</td><td style="padding:3px 8px;color:#c5c8c6">-1.2σ</td></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">AVGO</td><td style="padding:3px 8px">$331.01</td><td style="padding:3px 8px;color:#ff5555">-3.41%</td><td style="padding:3px 8px;color:#c5c8c6">0.0σ</td></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">ARM</td><td style="padding:3px 8px">$121.90</td><td style="padding:3px 8px;color:#ff5555">-2.70%</td><td style="padding:3px 8px;color:#c5c8c6">0.0σ</td></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">SMCI</td><td style="padding:3px 8px">$30.75</td><td style="padding:3px 8px;color:#ff5555">-3.97%</td><td style="padding:3px 8px;color:#c5c8c6">0.0σ</td></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">CRM</td><td style="padding:3px 8px">$184.71</td><td style="padding:3px 8px;color:#ff5555">-0.14%</td><td style="padding:3px 8px;color:#c5c8c6">0.0σ</td></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">NFLX</td><td style="padding:3px 8px">$76.16</td><td style="padding:3px 8px;color:#ff5555">-4.34%</td><td style="padding:3px 8px;color:#c5c8c6">0.0σ</td></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">COIN</td><td style="padding:3px 8px">$142.69</td><td style="padding:3px 8px;color:#ff5555">-6.85%</td><td style="padding:3px 8px;color:#c5c8c6">0.0σ</td></tr>
-
-</table>
+    </table>
 </div>
 
 <!-- SECTOR ROTATION -->
-<h2>🔄 SECTOR ROTATION <span class="badge" style="background:#ff5555;color:#000">DEFENSIVE</span></h2>
-<div class="card">
-<table>
-<tr style="color:#8be9fd;border-bottom:1px solid #333"><th style="text-align:left;padding:3px 8px">Sector</th><th style="text-align:left;padding:3px 8px">Price</th><th style="text-align:left;padding:3px 8px">5D</th><th style="text-align:left;padding:3px 8px">10D</th></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">XLU</td><td style="padding:3px 8px">$45.45</td><td style="padding:3px 8px;color:#50fa7b">+5.45%</td><td style="padding:3px 8px;color:#50fa7b">+4.89%</td></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">XLB</td><td style="padding:3px 8px">$53.02</td><td style="padding:3px 8px;color:#50fa7b">+4.98%</td><td style="padding:3px 8px;color:#50fa7b">+6.03%</td></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">XLRE</td><td style="padding:3px 8px">$43.13</td><td style="padding:3px 8px;color:#50fa7b">+4.61%</td><td style="padding:3px 8px;color:#50fa7b">+4.25%</td></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">XLE</td><td style="padding:3px 8px">$54.15</td><td style="padding:3px 8px;color:#50fa7b">+3.71%</td><td style="padding:3px 8px;color:#50fa7b">+7.20%</td></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">XLP</td><td style="padding:3px 8px">$89.50</td><td style="padding:3px 8px;color:#50fa7b">+2.96%</td><td style="padding:3px 8px;color:#50fa7b">+8.97%</td></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">XLI</td><td style="padding:3px 8px">$173.21</td><td style="padding:3px 8px;color:#50fa7b">+2.87%</td><td style="padding:3px 8px;color:#50fa7b">+4.43%</td></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">XLK</td><td style="padding:3px 8px">$139.38</td><td style="padding:3px 8px;color:#50fa7b">+2.76%</td><td style="padding:3px 8px;color:#ff5555">-5.10%</td></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">XLV</td><td style="padding:3px 8px">$156.72</td><td style="padding:3px 8px;color:#50fa7b">+1.21%</td><td style="padding:3px 8px;color:#50fa7b">+1.88%</td></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">XLC</td><td style="padding:3px 8px">$114.89</td><td style="padding:3px 8px;color:#ff5555">-1.14%</td><td style="padding:3px 8px;color:#ff5555">-4.09%</td></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">XLY</td><td style="padding:3px 8px">$116.11</td><td style="padding:3px 8px;color:#ff5555">-1.19%</td><td style="padding:3px 8px;color:#ff5555">-4.19%</td></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">XLF</td><td style="padding:3px 8px">$51.88</td><td style="padding:3px 8px;color:#ff5555">-2.65%</td><td style="padding:3px 8px;color:#ff5555">-3.12%</td></tr>
+<div class="card" style="margin-bottom:16px">
+    <h2>🔄 SECTOR ROTATION MAP</h2>
+    <table>
+        <tr><th>#</th><th>ETF</th><th>Sector</th><th>1D</th><th>5D</th><th>Vol</th><th>Signal</th></tr>
+        <tr><td>1</td><td>XLU</td><td>Utilities</td><td style="color:#00ff41">+1.48%</td><td>+4.38%</td><td>1.4x</td><td><span class="badge badge-defensive">DEFENSIVE</span></td></tr>
+<tr><td>2</td><td>XLP</td><td>Consumer Staples</td><td style="color:#00ff41">+0.92%</td><td>+1.44%</td><td>1.3x</td><td><span class="badge badge-defensive">DEFENSIVE</span></td></tr>
+<tr><td>3</td><td>XLRE</td><td>Real Estate</td><td style="color:#888">+0.16%</td><td>+2.10%</td><td>1.6x</td><td><span class="badge badge-neutral">NEUTRAL</span></td></tr>
+<tr><td>4</td><td>XLV</td><td>Healthcare</td><td style="color:#888">-0.16%</td><td>-1.08%</td><td>1.4x</td><td><span class="badge badge-neutral">NEUTRAL</span></td></tr>
+<tr><td>5</td><td>XLI</td><td>Industrials</td><td style="color:#ff4444">-1.20%</td><td>-0.25%</td><td>1.5x</td><td><span class="badge badge-selling">SELLING</span></td></tr>
+<tr><td>6</td><td>XLY</td><td>Consumer Disc</td><td style="color:#ff4444">-1.38%</td><td>-1.58%</td><td>1.2x</td><td><span class="badge badge-selling">SELLING</span></td></tr>
+<tr><td>7</td><td>XLB</td><td>Materials</td><td style="color:#ff4444">-1.47%</td><td>+2.56%</td><td>1.5x</td><td><span class="badge badge-selling">SELLING</span></td></tr>
+<tr><td>8</td><td>XLC</td><td>Communication</td><td style="color:#ff4444">-1.80%</td><td>-0.97%</td><td>1.0x</td><td><span class="badge badge-selling">SELLING</span></td></tr>
+<tr><td>9</td><td>XLE</td><td>Energy</td><td style="color:#ff4444">-1.82%</td><td>+1.37%</td><td>1.4x</td><td><span class="badge badge-selling">SELLING</span></td></tr>
+<tr><td>10</td><td>XLF</td><td>Financials</td><td style="color:#ff4444">-1.99%</td><td>-4.74%</td><td>1.6x</td><td><span class="badge badge-selling">SELLING</span></td></tr>
+<tr><td>11</td><td>XLK</td><td>Technology</td><td style="color:#ff4444">-2.63%</td><td>-1.36%</td><td>1.2x</td><td><span class="badge badge-selling">SELLING</span></td></tr>
 
-</table>
-</div>
-
-<!-- MACRO -->
-<h2>🌐 MACRO DASHBOARD</h2>
-<div class="card">
-<table>
-<tr style="color:#8be9fd;border-bottom:1px solid #333"><th style="text-align:left;padding:3px 8px">Asset</th><th style="text-align:left;padding:3px 8px">Price</th><th style="text-align:left;padding:3px 8px">1D</th></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">TLT</td><td style="padding:3px 8px">$89.25</td><td style="padding:3px 8px;color:#50fa7b">+1.36%</td></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">HYG</td><td style="padding:3px 8px">$80.78</td><td style="padding:3px 8px;color:#ff5555">-0.06%</td></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">GLD</td><td style="padding:3px 8px">$451.99</td><td style="padding:3px 8px;color:#ff5555">-3.34%</td></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">USO</td><td style="padding:3px 8px">$76.28</td><td style="padding:3px 8px;color:#ff5555">-3.31%</td></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">UUP</td><td style="padding:3px 8px">$26.83</td><td style="padding:3px 8px;color:#50fa7b">+0.00%</td></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">LQD</td><td style="padding:3px 8px">$111.23</td><td style="padding:3px 8px;color:#50fa7b">+0.48%</td></tr>
-
-</table>
+    </table>
 </div>
 
-<!-- CONVICTION PLAYBOOK -->
-<h2>🎯 CONVICTION PLAYBOOK</h2>
+<!-- TOP OPTIONS PLAYS -->
+<div class="card" style="margin-bottom:16px">
+    <h2>💰 TOP OPTIONS PLAYS (Edge Score Ranked)</h2>
+    <table>
+        <tr><th>#</th><th>Sym</th><th>Dir</th><th>Type</th><th>Strike</th><th>DTE</th><th>IV</th><th>Entry</th><th>Edge</th></tr>
+        <tr><td>1</td><td>AAPL</td><td style="color:#ff4444">BEARISH</td><td>put</td><td>$257.5</td><td>14D</td><td>27.5%</td><td>$4.28</td><td>45</td></tr>
+<tr><td>2</td><td>AAPL</td><td style="color:#ff4444">BEARISH</td><td>put</td><td>$260.0</td><td>5D</td><td>25.0%</td><td>$3.08</td><td>45</td></tr>
+<tr><td>3</td><td>AAPL</td><td style="color:#ff4444">BEARISH</td><td>put</td><td>$262.5</td><td>5D</td><td>22.8%</td><td>$4.15</td><td>45</td></tr>
+<tr><td>4</td><td>AAPL</td><td style="color:#ff4444">BEARISH</td><td>put</td><td>$270.0</td><td>21D</td><td>23.0%</td><td>$11.55</td><td>45</td></tr>
+<tr><td>5</td><td>AAPL</td><td style="color:#ff4444">BEARISH</td><td>put</td><td>$265.0</td><td>5D</td><td>20.2%</td><td>$5.53</td><td>45</td></tr>
+<tr><td>6</td><td>AAPL</td><td style="color:#ff4444">BEARISH</td><td>put</td><td>$265.0</td><td>7D</td><td>22.9%</td><td>$6.2</td><td>45</td></tr>
+<tr><td>7</td><td>AAPL</td><td style="color:#ff4444">BEARISH</td><td>put</td><td>$245.0</td><td>7D</td><td>35.0%</td><td>$0.76</td><td>45</td></tr>
+<tr><td>8</td><td>AAPL</td><td style="color:#ff4444">BEARISH</td><td>put</td><td>$270.0</td><td>7D</td><td>20.0%</td><td>$9.88</td><td>45</td></tr>
+<tr><td>9</td><td>AAPL</td><td style="color:#ff4444">BEARISH</td><td>put</td><td>$260.0</td><td>28D</td><td>26.4%</td><td>$7.17</td><td>45</td></tr>
+<tr><td>10</td><td>AAPL</td><td style="color:#ff4444">BEARISH</td><td>put</td><td>$270.0</td><td>12D</td><td>17.3%</td><td>$9.93</td><td>45</td></tr>
+<tr><td>11</td><td>AAPL</td><td style="color:#ff4444">BEARISH</td><td>put</td><td>$275.0</td><td>28D</td><td>21.6%</td><td>$15.62</td><td>45</td></tr>
+<tr><td>12</td><td>AAPL</td><td style="color:#ff4444">BEARISH</td><td>put</td><td>$252.5</td><td>5D</td><td>30.1%</td><td>$1.17</td><td>45</td></tr>
+<tr><td>13</td><td>AAPL</td><td style="color:#ff4444">BEARISH</td><td>put</td><td>$265.0</td><td>21D</td><td>24.9%</td><td>$8.62</td><td>45</td></tr>
+<tr><td>14</td><td>AAPL</td><td style="color:#ff4444">BEARISH</td><td>put</td><td>$250.0</td><td>28D</td><td>29.4%</td><td>$4.03</td><td>45</td></tr>
+<tr><td>15</td><td>AAPL</td><td style="color:#ff4444">BEARISH</td><td>put</td><td>$275.0</td><td>21D</td><td>20.7%</td><td>$15.1</td><td>45</td></tr>
 
-<div class="conv-card">
-<h3 style="color:#e6db74">PLAY #1: DAY TRADE</h3>
-<div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px">
-<div><div class="label">Direction</div><div class="conv-score" style="color:#666">NEUTRAL</div></div>
-<div><div class="label">Conviction</div><div class="conv-score" style="color:#666">40/100</div></div>
-<div><div class="label">Min Threshold</div><div style="color:#666">65/100</div></div>
-</div>
-<div style="font-size:.85em;color:#888;margin-top:6px">
-⚠️ Conviction below 65 threshold — no high-conviction day trade. 
-Factors: σ-move (-1.4), regime (GAP-AND-FADE), term structure (INVERTED), risk (70/100).<br>
-<strong>Edge requires:</strong> GEX mechanical edge + opening flow confirmation + microstructure precursor (available at market open).
-</div>
-</div>
-
-<div class="conv-card">
-<h3 style="color:#e6db74">PLAY #2: SWING TRADE (2-15D)</h3>
-<div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px">
-<div><div class="label">Direction</div><div class="conv-score" style="color:#f1fa8c">SHORT</div></div>
-<div><div class="label">Conviction</div><div class="conv-score" style="color:#f1fa8c">50/100</div></div>
-<div><div class="label">Min Threshold</div><div style="color:#666">70/100</div></div>
-</div>
-<div style="font-size:.85em;color:#888;margin-top:6px">
-⚠️ Below 70 threshold — monitoring. 
-Factors: rotation (DEFENSIVE), σ-move, term structure inversion. Full swing conviction requires institutional flow accumulation data (Section 11.4) + sector momentum + dark pool confirmation.
-</div>
+    </table>
 </div>
 
-<!-- SIGMA OPPORTUNITIES -->
-<h2>⚡ σ-MOVE OPPORTUNITIES</h2>
-<div class="card">
-<div style="font-size:.85em;color:#666;margin-bottom:6px">Names trading >1.5σ from 20-day mean — potential mean-reversion or breakdown candidates</div>
-<table>
-<tr style="color:#8be9fd;border-bottom:1px solid #333"><th style="text-align:left;padding:3px 8px">Symbol</th><th style="text-align:left;padding:3px 8px">Price</th><th style="text-align:left;padding:3px 8px">σ-Move</th><th style="text-align:left;padding:3px 8px">Day Chg</th><th style="text-align:left;padding:3px 8px">Signal</th></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">GOOG</td><td style="padding:3px 8px">$308.70</td><td style="padding:3px 8px;color:#ff5555">-2.3σ</td><td style="padding:3px 8px">-0.8%</td><td style="padding:3px 8px">LONG (mean-revert)</td></tr>
-<tr><td style="padding:3px 8px;color:#bd93f9">AMZN</td><td style="padding:3px 8px">$198.85</td><td style="padding:3px 8px;color:#ff5555">-2.1σ</td><td style="padding:3px 8px">-2.5%</td><td style="padding:3px 8px">LONG (mean-revert)</td></tr>
-</table>
+<!-- SWING TRADES -->
+<div class="card" style="margin-bottom:16px">
+    <h2>🔄 TOP SWING TRADES (Factor Score Ranked)</h2>
+    <table>
+        <tr><th>#</th><th>Sym</th><th>Direction</th><th>Spot</th><th>1D</th><th>5D</th><th>vs SMA20</th><th>Score</th></tr>
+        <tr><td>1</td><td>AMD</td><td style="color:#00ff41">long_bounce</td><td>$205.80</td><td>-3.6%</td><td>-1.2%</td><td>-11.3%</td><td>72</td></tr>
+<tr><td>2</td><td>AAPL</td><td style="color:#00ff41">long_swing</td><td>$260.35</td><td>-5.0%</td><td>-5.9%</td><td>-0.8%</td><td>61</td></tr>
+<tr><td>3</td><td>AMZN</td><td style="color:#00ff41">long_swing</td><td>$198.35</td><td>-2.2%</td><td>-5.1%</td><td>-13.5%</td><td>60</td></tr>
+<tr><td>4</td><td>NVDA</td><td style="color:#888">neutral</td><td>$187.19</td><td>-1.6%</td><td>+0.8%</td><td>+0.9%</td><td>40</td></tr>
+<tr><td>5</td><td>TSLA</td><td style="color:#888">neutral</td><td>$414.57</td><td>-2.6%</td><td>+1.4%</td><td>-2.6%</td><td>40</td></tr>
+<tr><td>6</td><td>META</td><td style="color:#888">neutral</td><td>$646.33</td><td>-2.8%</td><td>-1.8%</td><td>-2.8%</td><td>40</td></tr>
+<tr><td>7</td><td>MSFT</td><td style="color:#888">neutral</td><td>$400.05</td><td>-0.6%</td><td>+0.2%</td><td>-8.1%</td><td>40</td></tr>
+<tr><td>8</td><td>GOOG</td><td style="color:#888">neutral</td><td>$308.02</td><td>-0.6%</td><td>-4.2%</td><td>-6.5%</td><td>40</td></tr>
+<tr><td>9</td><td>AVGO</td><td style="color:#888">neutral</td><td>$329.70</td><td>-3.4%</td><td>-0.5%</td><td>-0.3%</td><td>40</td></tr>
+
+    </table>
 </div>
 
-<!-- PROTOCOL STATUS -->
-<h2>📋 PROTOCOL STATUS — v3.2.0</h2>
-<div class="card">
-<table style="font-size:.85em">
-<tr style="color:#8be9fd;border-bottom:1px solid #333"><th style="text-align:left;padding:3px 8px">Section</th><th style="text-align:left;padding:3px 8px">Status</th><th style="text-align:left;padding:3px 8px">Notes</th></tr>
-<tr><td style="padding:3px 8px">§1.1 Overnight Regime</td><td style="padding:3px 8px;color:#50fa7b">✅ ACTIVE</td><td style="padding:3px 8px;color:#666">GAP-AND-FADE</td></tr>
-<tr><td style="padding:3px 8px">§1.2 Term Structure</td><td style="padding:3px 8px;color:#50fa7b">✅ ACTIVE</td><td style="padding:3px 8px;color:#666">INVERTED — 9 expirations mapped</td></tr>
-<tr><td style="padding:3px 8px">§1.3 Skew Topology</td><td style="padding:3px 8px;color:#50fa7b">✅ ACTIVE</td><td style="padding:3px 8px;color:#666">5 expirations, ATM/25Δ/10Δ mapped</td></tr>
-<tr><td style="padding:3px 8px">§1.4 GEX Landscape</td><td style="padding:3px 8px;color:#ffb86c">⏳ PENDING</td><td style="padding:3px 8px;color:#666">OI unavailable after hours — activates 09:30 ET</td></tr>
-<tr><td style="padding:3px 8px">§2 Opening Flow</td><td style="padding:3px 8px;color:#666">⬜ MARKET HOURS</td><td style="padding:3px 8px;color:#666">Requires live trade tape (OPRA)</td></tr>
-<tr><td style="padding:3px 8px">§3 Intraday Analysis</td><td style="padding:3px 8px;color:#666">⬜ MARKET HOURS</td><td style="padding:3px 8px;color:#666">Unusual activity, sector rotation, IV surface</td></tr>
-<tr><td style="padding:3px 8px">§4 Institutional</td><td style="padding:3px 8px;color:#666">⬜ REQUIRES OPRA</td><td style="padding:3px 8px;color:#666">Fingerprinting needs per-trade data</td></tr>
-<tr><td style="padding:3px 8px">§5 Risk Composite</td><td style="padding:3px 8px;color:#50fa7b">✅ ACTIVE</td><td style="padding:3px 8px;color:#666">HIGH 70/100 (simplified — full requires GEX+flow)</td></tr>
-<tr><td style="padding:3px 8px">§11 AI Discovery</td><td style="padding:3px 8px;color:#666">⬜ REQUIRES OPRA</td><td style="padding:3px 8px;color:#666">Cross-name sync, anomaly detection, analogs</td></tr>
-<tr><td style="padding:3px 8px">§12 Top 25 Options</td><td style="padding:3px 8px;color:#ffb86c">⏳ PARTIAL</td><td style="padding:3px 8px;color:#666">σ-opportunities identified — full requires flow+GEX</td></tr>
-<tr><td style="padding:3px 8px">§13 Top 25 Swing</td><td style="padding:3px 8px;color:#ffb86c">⏳ PARTIAL</td><td style="padding:3px 8px;color:#666">Sector rotation signal active — full requires multi-day flow</td></tr>
-<tr><td style="padding:3px 8px">§14 Top 25 Long-Term</td><td style="padding:3px 8px;color:#666">⬜ WEEKLY</td><td style="padding:3px 8px;color:#666">LEAPS accumulation scan — runs Fridays</td></tr>
-<tr><td style="padding:3px 8px">§16 Greeks Engine</td><td style="padding:3px 8px;color:#ffb86c">⏳ PENDING</td><td style="padding:3px 8px;color:#666">18 Greeks — OI needed. First-order from API, 2nd/3rd computed</td></tr>
-<tr><td style="padding:3px 8px">§17 Conviction Playbook</td><td style="padding:3px 8px;color:#50fa7b">✅ ACTIVE</td><td style="padding:3px 8px;color:#666">Day + Swing signals live — full at market open</td></tr>
-</table>
+<!-- WATCHLIST -->
+<div class="card" style="margin-bottom:16px">
+    <h2>👁️ NEXT SESSION WATCHLIST</h2>
+    <table>
+        <tr><th>Symbol</th><th>Spot</th><th>Hypothesis</th><th>Reasons</th><th>Priority</th></tr>
+        <tr><td>AMD</td><td>$205.80</td><td>bounce</td><td>Large move: -3.6%; Extended below SMA20: -11.3%</td><td>50</td></tr>
+<tr><td>AAPL</td><td>$260.35</td><td>bounce</td><td>Large move: -5.0%; Possible mean reversion candidate</td><td>40</td></tr>
+<tr><td>AVGO</td><td>$329.70</td><td>bounce</td><td>Large move: -3.4%</td><td>30</td></tr>
+<tr><td>AMZN</td><td>$198.35</td><td>neutral</td><td>Extended below SMA20: -13.5%</td><td>20</td></tr>
+<tr><td>MSFT</td><td>$400.05</td><td>neutral</td><td>Extended below SMA20: -8.1%</td><td>20</td></tr>
+<tr><td>GOOG</td><td>$308.02</td><td>neutral</td><td>Extended below SMA20: -6.6%</td><td>20</td></tr>
+
+    </table>
 </div>
 
-<div class="footer">
-OPTIONS FLOWPATROL v3.2.0 &bull; AI NON-HUMAN INTELLIGENCE PRODUCT &bull; NOT FINANCIAL ADVICE<br>
-Generated 2026-02-12 19:45 EST &bull; Data: Alpaca Markets API (2,822 SPY + 2,210 QQQ contracts) &bull; Analysis: Claude (Anthropic)<br>
-All trade outputs require human review. Options involve risk of total loss. Past analog performance ≠ future results.<br>
-<br>
-Desktop: <a href="https://alphaonedev.github.io/flowpatrol-desktop/">flowpatrol-desktop</a> |
-Mobile: <a href="https://alphaonedev.github.io/flowpatrol-mobile/">flowpatrol-mobile</a>
+<!-- NARRATIVE -->
+<div class="narrative">
+    <h2>📝 SESSION NARRATIVE</h2>
+    ## FlowPatrol Session Narrative — 2026-02-12<br><br>### Market Regime: TREND_DOWN (RISK_OFF_SELL)<br><br>**The Session:** Broad-based selling accelerated throughout the session with SPY closing -1.5% near its session low ($681.27). QQQ led the decline at -2.0%, while small caps (IWM -2.0%) showed no relative outperformance. This was a high-conviction sell day with volume 56% above the 5-day average.<br><br>**Key Flows:**<br>- Defensive rotation confirmed: XLU +1.5%, XLP +0.9% — classic flight to safety<br>- Tech (XLK -2.6%) and Financials (XLF -2.0%) led the selling<br>- AAPL -5.0% was the standout mega-cap decliner <br>- COIN -7.9% tracking crypto weakness (BTC $66.3K, down 30% from Jan highs)<br>- NFLX -4.7%, SMCI -5.0% — growth names under pressure<br><br>**Term Structure:** SPY in backwardation (slope -6.22) — front-month IV elevated vs back months, indicating near-term fear premium.<br><br>**Sector Rotation Signal:** DEFENSIVE_PIVOT — utilities, staples, and real estate leading. Classic late-cycle risk-off positioning.<br><br>**Risk Composite:** 43/100 (ELEVATED) — elevated but not extreme.<br><br>### Forward Implications<br>- Backwardation + defensive rotation = institutional hedging in progress<br>- Monitor for follow-through selling vs mean-reversion bounce tomorrow<br>- Historical analogs suggest +1.9% average next-day return after similar sessions<br>- Presidents' Day (Feb 17) = 3-day weekend — position unwinding possible Friday<br>
+</div>
+
+<!-- OVERNIGHT RISK -->
+<div class="card" style="margin-bottom:16px">
+    <h2>🌙 OVERNIGHT RISK</h2>
+    <div class="metric"><span class="label">SPY Support</span><span class="value">$680.37</span></div>
+    <div class="metric"><span class="label">SPY Resistance</span><span class="value">$694.24</span></div>
+    <div class="metric"><span class="label">Gap Probability</span><span class="value yellow">elevated — sellers in control</span></div>
+    <br>
+    • 3-day weekend ahead (Presidents' Day) — position unwinding risk<br>• Backwardation persisting — hedging demand elevated<br>• BTC/ETH weakness may accelerate if equities gap down<br>• CPI data sensitivity — any macro catalyst amplified in risk-off environment
+</div>
+
+<div class="disclaimer">
+    DISCLAIMER: All trade recommendations are AI-generated analytical outputs. Not financial advice. Options involve substantial risk of total loss. Past analog performance does not guarantee future results. All outputs require human review before execution.
+</div>
+
+<footer>
+    FlowPatrol v3.2.0-M | Generated by Sentinel | 2026-02-12 20:58:31.033188-05:00
+</footer>
+
 </div>
 </body>
 </html>
